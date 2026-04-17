@@ -3,184 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>晴域 Sereo｜數位轉型顧問</title>
-<meta name="description" content="晴域 Sereo 協助餐飲與中小商家建立數位品牌，從精品官網到 LINE 智能接待，讓好店被找到。">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<title>晴域 Sereo｜數位美學顧問</title>
+<meta name="description" content="晴域 Sereo 以美學校準戰略，協助餐飲與中小品牌建立具備呼吸感的數位存在。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F8F6F1;
-  --bg2: #F2EFE8;
-  --bg3: #ECEAE2;
-  --ink: #1A2A1A;
-  --ink2: #3A4A3A;
-  --green: #3A7A3A;
-  --green2: #5A9A5A;
-  --green3: #8EC88E;
-  --cream: #F0EDE4;
-  --muted: rgba(26,42,26,0.45);
-  --line: rgba(58,122,58,0.15);
-  --line2: rgba(26,42,26,0.08);
+  --bg: #F9F7F3;
+  --bg2: #F3F0E9;
+  --bg3: #ECE8DF;
+  --ink: #1A1814;
+  --ink2: #3A3428;
+  --green: #2D5A2D;
+  --green2: #4A7A4A;
+  --green3: #7AAA7A;
+  --muted: rgba(26,24,20,0.4);
+  --line: rgba(45,90,45,0.12);
+  --line2: rgba(26,24,20,0.06);
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { background:var(--bg); color:var(--ink); font-family:'Noto Serif TC',serif; overflow-x:hidden; cursor:none; }
+body { background:var(--bg); color:var(--ink); font-family:'Noto Serif TC',serif; overflow-x:hidden; cursor:none; font-weight:300; }
 
-/* CURSOR */
-.cursor { width:8px; height:8px; background:var(--green); border-radius:50%; position:fixed; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform 0.2s; }
-.cursor-ring { width:32px; height:32px; border:1px solid var(--green2); border-radius:50%; position:fixed; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); opacity:0.35; }
+.cursor { width:6px; height:6px; background:var(--ink); border-radius:50%; position:fixed; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform 0.15s; }
+.cursor-ring { width:28px; height:28px; border:0.5px solid rgba(26,24,20,0.3); border-radius:50%; position:fixed; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); }
 
 /* NAV */
-nav { position:fixed; top:0; left:0; right:0; z-index:200; padding:20px 60px; display:flex; justify-content:space-between; align-items:center; background:rgba(248,246,241,0.94); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); transition:all 0.4s; }
-nav.scrolled { box-shadow:0 4px 32px rgba(58,122,58,0.08); }
-.nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
-.nav-s { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:400; color:var(--ink); line-height:1; position:relative; }
-.nav-s::after { content:''; position:absolute; top:2px; right:-10px; width:8px; height:8px; border-radius:50%; background:var(--green2); animation:pulse 3s ease-in-out infinite; }
-@keyframes pulse { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.4);opacity:0.5;} }
-.nav-text { display:flex; flex-direction:column; }
-.nav-en { font-family:'Playfair Display',serif; font-size:1rem; letter-spacing:4px; color:var(--ink); font-weight:400; }
-.nav-zh { font-size:0.48rem; letter-spacing:6px; color:var(--green2); font-weight:300; margin-top:2px; }
-.nav-links { display:flex; gap:40px; list-style:none; }
-.nav-links a { font-size:0.7rem; letter-spacing:3px; color:var(--ink2); text-decoration:none; transition:color 0.3s; }
-.nav-links a:hover { color:var(--green); }
-.nav-cta { font-size:0.68rem; letter-spacing:3px; color:var(--green); border:1px solid var(--green); padding:10px 24px; text-decoration:none; transition:all 0.3s; }
-.nav-cta:hover { background:var(--green); color:#fff; }
-.nav-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
-.nav-toggle span { width:22px; height:1.5px; background:var(--ink); transition:all 0.3s; }
+nav { position:fixed; top:0; left:0; right:0; z-index:200; padding:24px 72px; display:flex; justify-content:space-between; align-items:center; background:rgba(249,247,243,0.96); backdrop-filter:blur(20px); transition:all 0.5s; }
+nav.scrolled { border-bottom:0.5px solid var(--line2); }
+.nav-logo { display:flex; align-items:baseline; gap:10px; text-decoration:none; }
+.nav-s { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; font-style:italic; color:var(--ink); }
+.nav-brand { display:flex; flex-direction:column; }
+.nav-en { font-family:'Cormorant Garamond',serif; font-size:0.9rem; letter-spacing:6px; color:var(--ink); font-weight:300; }
+.nav-zh { font-size:0.42rem; letter-spacing:8px; color:var(--green2); font-weight:200; margin-top:1px; }
+.nav-links { display:flex; gap:48px; list-style:none; }
+.nav-links a { color:var(--muted); text-decoration:none; font-size:0.62rem; letter-spacing:4px; font-weight:300; transition:color 0.4s; }
+.nav-links a:hover { color:var(--ink); }
+.nav-cta { font-size:0.62rem; letter-spacing:4px; color:var(--green); border-bottom:0.5px solid var(--green); padding-bottom:2px; text-decoration:none; transition:all 0.3s; font-weight:300; }
+.nav-cta:hover { color:var(--ink); border-color:var(--ink); }
+.nav-toggle { display:none; flex-direction:column; gap:6px; background:none; border:none; cursor:pointer; }
+.nav-toggle span { width:20px; height:0.5px; background:var(--ink); }
 
 /* HERO */
-#hero { min-height:100vh; display:flex; align-items:center; padding:120px 60px 80px; position:relative; overflow:hidden; }
-.hero-nebula { position:absolute; inset:0; background: radial-gradient(ellipse at 75% 30%, rgba(90,180,90,0.09) 0%, transparent 50%), radial-gradient(ellipse at 25% 70%, rgba(90,180,90,0.06) 0%, transparent 45%), radial-gradient(ellipse at 50% 50%, rgba(160,220,160,0.04) 0%, transparent 60%), var(--bg); animation:nebula 8s ease-in-out infinite alternate; }
-@keyframes nebula { from{opacity:0.7;} to{opacity:1;} }
-.hero-grain { position:absolute; inset:0; opacity:0.02; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); pointer-events:none; }
-.hero-content { position:relative; z-index:2; max-width:1200px; margin:0 auto; width:100%; display:grid; grid-template-columns:1.2fr 0.8fr; gap:80px; align-items:center; }
-.hero-text { animation:fadeUp 0.9s ease both; }
-.hero-eyebrow { font-size:0.58rem; letter-spacing:5px; color:var(--green2); margin-bottom:28px; display:flex; align-items:center; gap:12px; }
-.hero-eyebrow::before { content:''; width:28px; height:1px; background:var(--green2); }
-.hero-title { font-family:'Playfair Display',serif; font-size:clamp(3rem,5.5vw,5rem); font-weight:400; line-height:1.08; color:var(--ink); margin-bottom:24px; letter-spacing:-0.02em; }
+#hero { min-height:100vh; padding:160px 72px 120px; position:relative; overflow:hidden; display:flex; align-items:center; }
+.hero-bg { position:absolute; inset:0; background: radial-gradient(ellipse at 85% 15%, rgba(74,122,74,0.06) 0%, transparent 55%), radial-gradient(ellipse at 15% 85%, rgba(74,122,74,0.04) 0%, transparent 45%), var(--bg); }
+.hero-inner { position:relative; z-index:2; max-width:1400px; margin:0 auto; width:100%; }
+.hero-eyebrow { font-size:0.52rem; letter-spacing:6px; color:var(--green2); font-weight:300; margin-bottom:48px; display:flex; align-items:center; gap:20px; opacity:0; animation:fadeIn 1s 0.3s ease both; }
+.hero-eyebrow::before { content:''; width:40px; height:0.5px; background:var(--green2); }
+.hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(3.5rem,7vw,7rem); font-weight:300; line-height:1.05; color:var(--ink); margin-bottom:0; letter-spacing:-0.01em; opacity:0; animation:fadeUp 1s 0.5s ease both; }
 .hero-title em { font-style:italic; color:var(--green); }
-.hero-desc { font-size:0.9rem; line-height:2.3; color:var(--muted); font-weight:300; max-width:460px; margin-bottom:44px; letter-spacing:0.04em; }
-.hero-ctas { display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
-.btn-primary { background:var(--ink); color:#fff; padding:15px 36px; font-size:0.7rem; letter-spacing:3px; text-decoration:none; transition:all 0.3s; font-family:inherit; display:inline-block; }
-.btn-primary:hover { background:var(--green); transform:translateY(-3px); box-shadow:0 12px 32px rgba(58,122,58,0.2); }
-.btn-ghost { color:var(--ink); font-size:0.7rem; letter-spacing:3px; text-decoration:none; display:flex; align-items:center; gap:8px; transition:all 0.3s; }
-.btn-ghost:hover { color:var(--green); gap:14px; }
+.hero-title-right { text-align:right; margin-top:-0.5rem; }
+.hero-subtitle { font-size:0.8rem; line-height:2.4; color:var(--muted); font-weight:200; max-width:380px; margin-top:52px; letter-spacing:0.08em; opacity:0; animation:fadeUp 1s 0.8s ease both; margin-left:auto; }
+.hero-ctas { display:flex; gap:32px; align-items:center; margin-top:64px; opacity:0; animation:fadeUp 1s 1s ease both; }
+.btn-ink { color:var(--ink); font-size:0.62rem; letter-spacing:4px; text-decoration:none; display:flex; align-items:center; gap:10px; transition:all 0.4s; font-weight:300; border-bottom:0.5px solid var(--ink); padding-bottom:2px; }
+.btn-ink:hover { color:var(--green); border-color:var(--green); gap:16px; }
+.btn-green { color:var(--green); font-size:0.62rem; letter-spacing:4px; text-decoration:none; display:flex; align-items:center; gap:10px; transition:all 0.4s; font-weight:300; }
+.btn-green:hover { gap:16px; }
 
-/* HERO LOGO */
-.hero-visual { animation:fadeUp 0.9s 0.2s ease both; display:flex; justify-content:center; }
-.logo-stage { width:340px; height:340px; background:rgba(248,246,241,0.6); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; position:relative; }
-.logo-aura { position:absolute; inset:-20px; background:radial-gradient(ellipse, rgba(90,180,90,0.08) 0%, transparent 65%); animation:aura 5s ease-in-out infinite alternate; border-radius:50%; }
-@keyframes aura { from{opacity:0.4; transform:scale(0.95);} to{opacity:1; transform:scale(1.05);} }
-.logo-s { font-family:'Playfair Display',serif; font-size:180px; font-weight:400; line-height:1; background:linear-gradient(135deg, #1A2A1A 0%, #2A4A2A 50%, #1A3A1A 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; position:relative; z-index:1; filter:drop-shadow(0 0 20px rgba(90,180,90,0.12)); }
-.logo-en { font-family:'Playfair Display',serif; font-size:28px; font-weight:300; letter-spacing:12px; color:var(--ink); margin-top:-8px; }
-.logo-line { width:120px; height:1px; background:linear-gradient(to right, transparent, var(--green2), transparent); margin:14px auto; }
-.logo-zh { font-size:13px; font-weight:300; letter-spacing:18px; color:var(--green2); }
-
-/* STATS */
-.hero-stats { position:absolute; bottom:48px; left:60px; right:60px; max-width:1200px; margin:0 auto; display:flex; gap:60px; padding-top:32px; border-top:1px solid var(--line2); }
-.stat-num { font-family:'Playfair Display',serif; font-size:2rem; color:var(--ink); font-weight:400; line-height:1; }
-.stat-label { font-size:0.58rem; letter-spacing:3px; color:var(--muted); margin-top:4px; }
-
-/* PAIN POINTS */
-#pain { background:var(--ink); padding:100px 60px; position:relative; overflow:hidden; }
-#pain::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(90,180,90,0.03) 40px, rgba(90,180,90,0.03) 41px); }
-.pain-inner { max-width:1200px; margin:0 auto; position:relative; z-index:1; }
-.pain-label { font-size:0.58rem; letter-spacing:5px; color:var(--green2); margin-bottom:20px; display:block; }
-.pain-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:400; color:#fff; margin-bottom:60px; line-height:1.2; }
-.pain-title em { font-style:italic; color:var(--green3); }
-.pain-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:rgba(255,255,255,0.05); }
-.pain-card { background:rgba(255,255,255,0.03); padding:44px 36px; border:1px solid rgba(255,255,255,0.04); transition:all 0.3s; }
-.pain-card:hover { background:rgba(90,180,90,0.08); border-color:rgba(90,180,90,0.2); }
-.pain-icon { font-size:0.7rem; letter-spacing:3px; color:var(--green3); margin-bottom:20px; display:block; }
-.pain-q { font-size:1rem; font-weight:700; color:#fff; margin-bottom:14px; line-height:1.5; }
-.pain-a { font-size:0.8rem; color:rgba(255,255,255,0.5); line-height:1.9; font-weight:300; }
-.pain-a strong { color:var(--green3); font-weight:500; }
+/* INSIGHT */
+#insight { padding:160px 72px; background:var(--bg2); }
+.insight-inner { max-width:1400px; margin:0 auto; }
+.insight-header { display:grid; grid-template-columns:1fr 1fr; gap:80px; margin-bottom:100px; align-items:end; }
+.insight-label { font-size:0.5rem; letter-spacing:6px; color:var(--green2); font-weight:300; margin-bottom:20px; display:block; }
+.insight-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,4vw,4rem); font-weight:300; color:var(--ink); line-height:1.15; font-style:italic; }
+.insight-desc { font-size:0.75rem; line-height:2.4; color:var(--muted); font-weight:200; letter-spacing:0.06em; }
+.insight-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line2); }
+.insight-item { background:var(--bg2); padding:52px 40px; transition:background 0.4s; }
+.insight-item:hover { background:var(--bg); }
+.insight-num { font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:var(--line); line-height:1; margin-bottom:24px; font-style:italic; display:block; }
+.insight-item h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:var(--ink); margin-bottom:16px; letter-spacing:0.05em; }
+.insight-item p { font-size:0.75rem; line-height:2.2; color:var(--muted); font-weight:200; letter-spacing:0.06em; }
 
 /* SERVICES */
-#services { padding:100px 60px; background:var(--bg2); }
-.services-inner { max-width:1200px; margin:0 auto; }
-.section-label { font-size:0.58rem; letter-spacing:5px; color:var(--green2); margin-bottom:14px; display:block; }
-.section-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:400; color:var(--ink); margin-bottom:60px; line-height:1.2; }
-.services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:3px; background:var(--line2); }
-.service-card { background:#fff; padding:44px 40px; transition:all 0.3s; position:relative; overflow:hidden; }
-.service-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--green2); transform:scaleY(0); transition:transform 0.3s; transform-origin:bottom; }
-.service-card:hover { background:var(--bg); }
-.service-card:hover::before { transform:scaleY(1); }
-.service-icon { font-size:2.2rem; margin-bottom:20px; display:block; }
-.service-name { font-size:1.1rem; font-weight:700; color:var(--ink); margin-bottom:10px; letter-spacing:0.05em; }
-.service-desc { font-size:0.8rem; line-height:2; color:var(--muted); font-weight:300; margin-bottom:20px; }
-.service-price { font-size:0.68rem; letter-spacing:2px; color:var(--green); font-weight:500; }
+#services { padding:160px 72px; background:var(--bg); }
+.services-inner { max-width:1400px; margin:0 auto; }
+.services-header { margin-bottom:100px; }
+.services-list { display:flex; flex-direction:column; gap:1px; background:var(--line2); }
+.service-row { background:var(--bg); display:grid; grid-template-columns:80px 1fr 1fr 200px; gap:48px; align-items:center; padding:40px 48px; transition:background 0.4s; border-bottom:0.5px solid var(--line2); }
+.service-row:hover { background:var(--bg2); }
+.service-row-num { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:var(--line); font-style:italic; }
+.service-row-name { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:var(--ink); letter-spacing:0.05em; }
+.service-row-name small { display:block; font-family:'Noto Serif TC',serif; font-size:0.58rem; letter-spacing:4px; color:var(--green2); font-weight:300; margin-top:4px; font-style:normal; }
+.service-row-desc { font-size:0.72rem; line-height:2.1; color:var(--muted); font-weight:200; letter-spacing:0.05em; }
+.service-row-price { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--green); text-align:right; font-weight:300; letter-spacing:0.05em; }
 
 /* CASE */
-#case { padding:100px 60px; background:var(--bg); }
-.case-inner { max-width:1200px; margin:0 auto; }
-.case-card { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; background:#fff; border:1px solid var(--line2); padding:60px; }
-.case-label { font-size:0.55rem; letter-spacing:4px; color:var(--green2); margin-bottom:12px; display:block; }
-.case-title { font-family:'Playfair Display',serif; font-size:2.2rem; color:var(--ink); margin-bottom:16px; }
-.case-desc { font-size:0.82rem; line-height:2.1; color:var(--muted); font-weight:300; margin-bottom:28px; }
-.case-tags { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
-.case-tag { font-size:0.55rem; letter-spacing:2px; padding:5px 12px; border:1px solid var(--line); color:var(--green); }
-.case-link { font-size:0.7rem; letter-spacing:3px; color:var(--ink); text-decoration:none; display:flex; align-items:center; gap:8px; transition:all 0.3s; }
-.case-link:hover { color:var(--green); gap:14px; }
-.case-visual { background:var(--bg3); height:320px; display:flex; align-items:center; justify-content:center; border:1px solid var(--line2); font-family:'Playfair Display',serif; font-size:3rem; color:var(--green3); font-style:italic; letter-spacing:4px; }
+#case { padding:160px 72px; background:var(--bg2); }
+.case-inner { max-width:1400px; margin:0 auto; }
+.case-header { margin-bottom:80px; }
+.case-card { display:grid; grid-template-columns:1fr 1fr; gap:0; background:var(--bg); border:0.5px solid var(--line2); overflow:hidden; }
+.case-info { padding:72px 60px; display:flex; flex-direction:column; justify-content:space-between; }
+.case-num { font-family:'Cormorant Garamond',serif; font-size:5rem; font-weight:300; color:var(--line); line-height:1; font-style:italic; margin-bottom:32px; }
+.case-name { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:400; color:var(--ink); margin-bottom:20px; }
+.case-desc { font-size:0.75rem; line-height:2.4; color:var(--muted); font-weight:200; letter-spacing:0.06em; margin-bottom:36px; }
+.case-tags { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
+.case-tag { font-size:0.48rem; letter-spacing:3px; padding:4px 12px; border:0.5px solid var(--line); color:var(--green2); font-weight:300; }
+.case-link { font-size:0.62rem; letter-spacing:4px; color:var(--ink); text-decoration:none; display:flex; align-items:center; gap:10px; transition:all 0.4s; font-weight:300; border-bottom:0.5px solid var(--ink); padding-bottom:2px; width:fit-content; }
+.case-link:hover { color:var(--green); border-color:var(--green); gap:16px; }
+.case-visual { background:var(--bg3); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:5rem; color:var(--line); font-style:italic; min-height:400px; position:relative; overflow:hidden; }
+.case-visual::after { content:'夫妻蝦莊'; position:absolute; font-size:1rem; letter-spacing:8px; color:var(--muted); font-family:'Noto Serif TC',serif; font-weight:200; bottom:32px; right:32px; }
 
 /* CONTACT */
-#contact { padding:100px 60px; background:var(--ink); position:relative; overflow:hidden; }
-#contact::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 100%, rgba(90,180,90,0.12) 0%, transparent 55%); }
-.contact-inner { max-width:800px; margin:0 auto; text-align:center; position:relative; z-index:1; }
-.contact-label { font-size:0.58rem; letter-spacing:5px; color:var(--green2); margin-bottom:20px; display:block; }
-.contact-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.5rem); font-weight:400; color:#fff; margin-bottom:20px; line-height:1.2; }
-.contact-title em { font-style:italic; color:var(--green3); }
-.contact-desc { font-size:0.85rem; line-height:2.2; color:rgba(255,255,255,0.5); font-weight:300; margin-bottom:48px; }
-.contact-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
-.btn-green { background:var(--green); color:#fff; padding:16px 40px; font-size:0.72rem; letter-spacing:3px; text-decoration:none; transition:all 0.3s; font-family:inherit; display:inline-block; }
-.btn-green:hover { background:#2A6A2A; transform:translateY(-3px); }
-.btn-line { background:#06C755; color:#fff; padding:16px 40px; font-size:0.72rem; letter-spacing:3px; text-decoration:none; transition:all 0.3s; display:inline-block; }
-.btn-line:hover { background:#04A843; transform:translateY(-3px); }
+#contact { padding:160px 72px; background:var(--ink); position:relative; overflow:hidden; }
+#contact::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 70%, rgba(74,122,74,0.08) 0%, transparent 50%); }
+.contact-inner { max-width:1400px; margin:0 auto; position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:120px; align-items:center; }
+.contact-label { font-size:0.5rem; letter-spacing:6px; color:var(--green3); font-weight:300; margin-bottom:24px; display:block; }
+.contact-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,4vw,4.5rem); font-weight:300; color:#fff; line-height:1.1; font-style:italic; margin-bottom:32px; }
+.contact-desc { font-size:0.72rem; line-height:2.4; color:rgba(255,255,255,0.4); font-weight:200; letter-spacing:0.06em; }
+.contact-actions { display:flex; flex-direction:column; gap:16px; }
+.contact-btn { display:flex; align-items:center; justify-content:space-between; padding:20px 28px; border:0.5px solid rgba(255,255,255,0.1); text-decoration:none; color:#fff; font-size:0.65rem; letter-spacing:4px; font-weight:300; transition:all 0.4s; }
+.contact-btn:hover { background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.2); }
+.contact-btn.line { border-color:rgba(6,199,85,0.3); }
+.contact-btn.line:hover { background:rgba(6,199,85,0.06); }
+.contact-btn-arrow { font-size:0.8rem; opacity:0.4; transition:all 0.4s; }
+.contact-btn:hover .contact-btn-arrow { opacity:1; transform:translateX(4px); }
 
 /* FOOTER */
-footer { background:#0E0E0E; padding:48px 60px 32px; color:#fff; }
-.footer-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:24px; }
-.footer-logo { display:flex; align-items:center; gap:10px; }
-.footer-s { font-family:'Playfair Display',serif; font-size:1.4rem; color:#fff; position:relative; }
-.footer-s::after { content:''; position:absolute; top:2px; right:-8px; width:6px; height:6px; border-radius:50%; background:var(--green2); }
-.footer-brand { font-size:0.5rem; letter-spacing:5px; color:rgba(255,255,255,0.3); margin-left:16px; }
+footer { background:#111008; padding:60px 72px 40px; }
+.footer-inner { max-width:1400px; margin:0 auto; }
+.footer-top { display:flex; justify-content:space-between; align-items:flex-end; padding-bottom:40px; border-bottom:0.5px solid rgba(255,255,255,0.06); margin-bottom:32px; flex-wrap:wrap; gap:24px; }
+.footer-s { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; font-style:italic; color:rgba(255,255,255,0.8); }
+.footer-tagline { font-size:0.48rem; letter-spacing:5px; color:rgba(255,255,255,0.2); margin-top:4px; font-weight:200; }
 .footer-links { display:flex; gap:32px; }
-.footer-links a { font-size:0.65rem; letter-spacing:2px; color:rgba(255,255,255,0.4); text-decoration:none; transition:color 0.3s; }
-.footer-links a:hover { color:var(--green2); }
-.footer-copy { font-size:0.55rem; letter-spacing:2px; color:rgba(255,255,255,0.2); text-align:center; }
+.footer-links a { color:rgba(255,255,255,0.25); text-decoration:none; font-size:0.58rem; letter-spacing:3px; transition:color 0.3s; font-weight:200; }
+.footer-links a:hover { color:rgba(255,255,255,0.6); }
+.footer-copy { font-size:0.5rem; letter-spacing:3px; color:rgba(255,255,255,0.15); font-weight:200; }
 
-/* MOBILE NAV */
-.mobile-nav { display:none; position:fixed; top:68px; left:0; right:0; background:rgba(248,246,241,0.99); padding:24px; border-bottom:1px solid var(--line); z-index:199; flex-direction:column; gap:16px; }
+/* MOBILE */
+.mobile-nav { display:none; position:fixed; top:80px; left:0; right:0; background:rgba(249,247,243,0.99); padding:32px 24px; border-bottom:0.5px solid var(--line2); z-index:199; flex-direction:column; gap:20px; }
 .mobile-nav.open { display:flex; }
-.mobile-nav a { color:var(--ink2); text-decoration:none; font-size:0.88rem; letter-spacing:2px; padding:10px 0; border-bottom:1px solid var(--line2); }
-.mobile-nav a:last-child { border:none; color:var(--green); font-weight:700; }
+.mobile-nav a { color:var(--ink2); text-decoration:none; font-size:0.82rem; letter-spacing:3px; padding:10px 0; border-bottom:0.5px solid var(--line2); font-weight:300; }
+.mobile-nav a:last-child { border:none; color:var(--green); }
 
-/* REVEAL */
-.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+.reveal { opacity:0; transform:translateY(20px); transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
 .reveal.visible { opacity:1; transform:translateY(0); }
 .reveal-d1 { transition-delay:0.1s; }
 .reveal-d2 { transition-delay:0.2s; }
 .reveal-d3 { transition-delay:0.3s; }
 
-@keyframes fadeUp { from{opacity:0;transform:translateY(32px);} to{opacity:1;transform:translateY(0);} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px);} to{opacity:1;transform:translateY(0);} }
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
 
 @media(max-width:960px) {
-  nav { padding:16px 20px; }
+  nav { padding:18px 20px; }
   .nav-links, .nav-cta { display:none; }
   .nav-toggle { display:flex; }
-  #hero { padding:100px 20px 80px; }
-  .hero-content { grid-template-columns:1fr; gap:40px; }
-  .hero-visual { display:none; }
-  .hero-stats { left:20px; right:20px; gap:32px; }
-  #pain { padding:60px 20px; }
-  .pain-grid { grid-template-columns:1fr; }
-  #services { padding:60px 20px; }
-  .services-grid { grid-template-columns:1fr; }
-  #case { padding:60px 20px; }
-  .case-card { grid-template-columns:1fr; gap:32px; padding:32px; }
-  #contact { padding:60px 20px; }
-  footer { padding:40px 20px 24px; }
-  .footer-inner { flex-direction:column; align-items:flex-start; }
+  #hero { padding:120px 20px 80px; }
+  .hero-subtitle { margin-left:0; }
+  #insight { padding:80px 20px; }
+  .insight-header { grid-template-columns:1fr; gap:32px; }
+  .insight-grid { grid-template-columns:1fr; }
+  #services { padding:80px 20px; }
+  .service-row { grid-template-columns:40px 1fr; gap:20px; padding:28px 20px; }
+  .service-row-price { display:none; }
+  .service-row-desc { display:none; }
+  #case { padding:80px 20px; }
+  .case-card { grid-template-columns:1fr; }
+  .case-visual { min-height:200px; }
+  #contact { padding:80px 20px; }
+  .contact-inner { grid-template-columns:1fr; gap:48px; }
+  footer { padding:40px 20px 28px; }
   body { cursor:auto; }
   .cursor, .cursor-ring { display:none; }
 }
@@ -194,80 +175,68 @@ footer { background:#0E0E0E; padding:48px 60px 32px; color:#fff; }
 <nav id="nav">
   <a href="#" class="nav-logo">
     <span class="nav-s">S</span>
-    <div class="nav-text">
+    <div class="nav-brand">
       <span class="nav-en">Sereo</span>
       <span class="nav-zh">晴  域</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#services">服務項目</a></li>
-    <li><a href="#case">作品案例</a></li>
-    <li><a href="#contact">開始合作</a></li>
+    <li><a href="#insight">觀點</a></li>
+    <li><a href="#services">服務</a></li>
+    <li><a href="#case">作品</a></li>
+    <li><a href="#contact">合作</a></li>
   </ul>
-  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="nav-cta">聯絡我們</a>
+  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="nav-cta">開始對話</a>
   <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-nav" id="mobileNav">
-  <a href="#services" onclick="closeNav()">服務項目</a>
-  <a href="#case" onclick="closeNav()">作品案例</a>
-  <a href="https://line.me/ti/p/~@625ummgh" target="_blank">聯絡我們</a>
+  <a href="#insight" onclick="closeNav()">觀點</a>
+  <a href="#services" onclick="closeNav()">服務</a>
+  <a href="#case" onclick="closeNav()">作品</a>
+  <a href="https://line.me/ti/p/~@625ummgh" target="_blank">開始對話</a>
 </div>
 
 <section id="hero">
-  <div class="hero-nebula"></div>
-  <div class="hero-grain"></div>
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-eyebrow">數位轉型顧問</div>
-      <h1 class="hero-title">
-        不只是網站，<br>
-        是品牌的<em>數位生命力</em>
-      </h1>
-      <p class="hero-desc">晴域 Sereo 協助餐飲與中小商家建立數位品牌，從精品官網到 LINE 智能接待，讓您的生意在網路上優雅擴張。</p>
-      <div class="hero-ctas">
-        <a href="#services" class="btn-primary">了解服務</a>
-        <a href="#case" class="btn-ghost">查看案例 →</a>
-      </div>
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">數位美學顧問 · Digital Aesthetics Studio</div>
+    <h1 class="hero-title">
+      以美學校準戰略，<br>
+      <span class="hero-title-right">讓品牌在數位世界<em>具備呼吸感</em></span>
+    </h1>
+    <p class="hero-subtitle">我們不架設網站，我們為品牌建構數位存在的方式。每一個決策都從美學出發，每一行代碼都服務於商業邏輯。</p>
+    <div class="hero-ctas">
+      <a href="#case" class="btn-ink">查看作品 →</a>
+      <a href="#contact" class="btn-green">開始合作</a>
     </div>
-    <div class="hero-visual">
-      <div class="logo-stage">
-        <div class="logo-aura"></div>
-        <div style="text-align:center; position:relative; z-index:1;">
-          <div class="logo-s">S</div>
-          <div class="logo-en">SEREO</div>
-          <div class="logo-line"></div>
-          <div class="logo-zh">晴  域</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-stats">
-    <div class="stat"><div class="stat-num">7</div><div class="stat-label">天交付官網</div></div>
-    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">客戶滿意度</div></div>
-    <div class="stat"><div class="stat-num">24h</div><div class="stat-label">售後支援</div></div>
   </div>
 </section>
 
-<section id="pain">
-  <div class="pain-inner">
-    <span class="pain-label">PAIN POINTS</span>
-    <h2 class="pain-title">您的品牌是否<br>正處於「<em>數位停滯</em>」？</h2>
-    <div class="pain-grid">
-      <div class="pain-card reveal">
-        <span class="pain-icon">01 · 能見度</span>
-        <div class="pain-q">地址只是文字？</div>
-        <div class="pain-a">我們讓它變成<strong>一鍵導航的流量入口</strong>，客人不再找不到路。</div>
+<section id="insight">
+  <div class="insight-inner">
+    <div class="insight-header reveal">
+      <div>
+        <span class="insight-label">INSIGHT · 觀點</span>
+        <h2 class="insight-title">我們如何<br>理解品牌與數位的關係</h2>
       </div>
-      <div class="pain-card reveal reveal-d1">
-        <span class="pain-icon">02 · 轉換率</span>
-        <div class="pain-q">網站只是裝飾？</div>
-        <div class="pain-a">我們讓它變成<strong>24 小時不休息的數位業務員</strong>，持續帶進訂單。</div>
+      <p class="insight-desc">在我們看來，數位化不是技術問題，而是美學問題。一個品牌在數位世界的樣貌，決定了它在客人心中的份量。</p>
+    </div>
+    <div class="insight-grid">
+      <div class="insight-item reveal">
+        <span class="insight-num">01</span>
+        <h3>消除阻力</h3>
+        <p>我們不只是標註座標，而是優化客群抵達品牌門戶的每一條路徑，消除品牌與客人之間的最後一哩阻力。</p>
       </div>
-      <div class="pain-card reveal reveal-d2">
-        <span class="pain-icon">03 · 效率</span>
-        <div class="pain-q">訊息回到手軟？</div>
-        <div class="pain-a">我們讓 LINE 機器人成為您的<strong>品牌管家</strong>，自動接待每一位客人。</div>
+      <div class="insight-item reveal reveal-d1">
+        <span class="insight-num">02</span>
+        <h3>視覺對焦</h3>
+        <p>拒絕廉價的代碼堆砌。每一處像素的配置，都應具備品牌獨有的氣息與辨識度，建構具備個性的數位載體。</p>
+      </div>
+      <div class="insight-item reveal reveal-d2">
+        <span class="insight-num">03</span>
+        <h3>數位留白</h3>
+        <p>自動化不應是冷冰冰的刷屏。我們在代碼中注入溫度，讓系統為您代理繁瑣，保留品牌的人文價值。</p>
       </div>
     </div>
   </div>
@@ -275,32 +244,46 @@ footer { background:#0E0E0E; padding:48px 60px 32px; color:#fff; }
 
 <section id="services">
   <div class="services-inner">
-    <span class="section-label">OUR SERVICES</span>
-    <h2 class="section-title">服務項目</h2>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <span class="service-icon">⚡</span>
-        <div class="service-name">閃電形象官網</div>
-        <p class="service-desc">7 天內完成交付。建立品牌專屬領地，手機電腦同步完美呈現，讓客人第一眼就留下深刻印象。</p>
-        <div class="service-price">起價 NT$ 15,000</div>
+    <div class="services-header reveal">
+      <span class="insight-label">SERVICES · 服務</span>
+      <h2 class="insight-title">我們提供的<br>不是工具，是解決方案</h2>
+    </div>
+    <div class="services-list">
+      <div class="service-row reveal">
+        <span class="service-row-num">01</span>
+        <div class="service-row-name">
+          閃電形象官網
+          <small>VISUAL IDENTITY SITE</small>
+        </div>
+        <div class="service-row-desc">7 天內交付。為品牌建構具備個性的數位載體，手機電腦同步完美呈現，拒絕公版感。</div>
+        <div class="service-row-price">起 NT$ 15,000</div>
       </div>
-      <div class="service-card reveal reveal-d1">
-        <span class="service-icon">🤖</span>
-        <div class="service-name">LINE 智能管家</div>
-        <p class="service-desc">全天候自動接待。圖文選單 + 關鍵字智能回覆，不漏接任何訂單，讓您專心做好本業。</p>
-        <div class="service-price">起價 NT$ 5,000</div>
+      <div class="service-row reveal reveal-d1">
+        <span class="service-row-num">02</span>
+        <div class="service-row-name">
+          LINE 私域代理
+          <small>PRIVATE AGENCY</small>
+        </div>
+        <div class="service-row-desc">建立有溫度的自動化溝通協議。智能選單與關鍵字回覆，讓品牌全天候在線。</div>
+        <div class="service-row-price">起 NT$ 5,000</div>
       </div>
-      <div class="service-card reveal">
-        <span class="service-icon">🎯</span>
-        <div class="service-name">Google 導航攻勢</div>
-        <p class="service-desc">讓客人一鍵找到您。商家資訊全面優化，導航連結精準到位，把每個路過的人都變成潛在顧客。</p>
-        <div class="service-price">起價 NT$ 3,000</div>
+      <div class="service-row reveal">
+        <span class="service-row-num">03</span>
+        <div class="service-row-name">
+          流動定位優化
+          <small>FLUID LOCATION</small>
+        </div>
+        <div class="service-row-desc">消除品牌與客人間的最後一哩阻力。Google 商家全面校準，一鍵導航精準到位。</div>
+        <div class="service-row-price">起 NT$ 3,000</div>
       </div>
-      <div class="service-card reveal reveal-d1">
-        <span class="service-icon">🛡️</span>
-        <div class="service-name">晴域隨身總管</div>
-        <p class="service-desc">數位資產保險。故障排除、內容微調，您只管專心開店，數位的事交給我們。</p>
-        <div class="service-price">月費 NT$ 1,500</div>
+      <div class="service-row reveal reveal-d1">
+        <span class="service-row-num">04</span>
+        <div class="service-row-name">
+          晴域隨身顧問
+          <small>RETAINER · 月費制</small>
+        </div>
+        <div class="service-row-desc">持續性的數位美學維護。內容微調、故障排除、定期健檢，讓品牌保持最佳狀態。</div>
+        <div class="service-row-price">NT$ 1,500 / 月</div>
       </div>
     </div>
   </div>
@@ -308,67 +291,86 @@ footer { background:#0E0E0E; padding:48px 60px 32px; color:#fff; }
 
 <section id="case">
   <div class="case-inner">
-    <span class="section-label">CASE STUDY</span>
-    <h2 class="section-title">作品案例</h2>
+    <div class="case-header reveal">
+      <span class="insight-label">WORK · 作品</span>
+      <h2 class="insight-title">我們做過的<br>每一個決定都留有痕跡</h2>
+    </div>
     <div class="case-card reveal">
-      <div>
-        <span class="case-label">CASE 01 · 餐飲品牌</span>
-        <h3 class="case-title">夫妻蝦莊</h3>
-        <p class="case-desc">板橋三民路的深夜蝦莊，Google 4.9 星的實力，終於有了配得上的數位門面。官網、LINE 智能接待、Google 導航全面到位，讓好店被找到。</p>
-        <div class="case-tags">
-          <span class="case-tag">精品官網</span>
-          <span class="case-tag">LINE 設定</span>
-          <span class="case-tag">Google 導航</span>
+      <div class="case-info">
+        <div>
+          <div class="case-num">01</div>
+          <h3 class="case-name">夫妻蝦莊</h3>
+          <p class="case-desc">板橋三民路的深夜蝦莊，Google 4.9 星的底氣，終於有了配得上的數位面貌。從官網到 LINE 智能接待，每一個細節都經過美學校準。</p>
+          <div class="case-tags">
+            <span class="case-tag">形象官網</span>
+            <span class="case-tag">LINE 設定</span>
+            <span class="case-tag">Google 導航</span>
+          </div>
         </div>
         <a href="https://sereo-design.github.io/fuqi-shrimp" target="_blank" class="case-link">查看網站 →</a>
       </div>
-      <div class="case-visual">夫妻蝦莊</div>
+      <div class="case-visual">蝦</div>
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="contact-inner">
-    <span class="contact-label">LET'S WORK TOGETHER</span>
-    <h2 class="contact-title">準備好讓您的<br>品牌<em>被找到</em>了嗎？</h2>
-    <p class="contact-desc">告訴我們您的需求，我們會在 24 小時內回覆，提供最適合您的數位解決方案。</p>
-    <div class="contact-btns">
-      <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="btn-line">💬 LINE 聯絡我們</a>
-      <a href="#services" class="btn-green">查看服務項目</a>
+    <div>
+      <span class="contact-label">CONTACT · 合作</span>
+      <h2 class="contact-title">準備好讓品牌<br>開始呼吸了嗎</h2>
+      <p class="contact-desc">告訴我們您的品牌故事，我們會在 24 小時內回覆，提供最適合的數位校準方案。</p>
+    </div>
+    <div class="contact-actions">
+      <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="contact-btn line">
+        <span>💬 LINE 開始對話</span>
+        <span class="contact-btn-arrow">→</span>
+      </a>
+      <a href="https://www.instagram.com/sereoqingyu" target="_blank" class="contact-btn">
+        <span>📸 Instagram</span>
+        <span class="contact-btn-arrow">→</span>
+      </a>
+      <a href="#services" class="contact-btn">
+        <span>查看服務項目</span>
+        <span class="contact-btn-arrow">→</span>
+      </a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      <span class="footer-s">S</span>
-      <span class="footer-brand">SEREO · 晴域數位設計</span>
+    <div class="footer-top">
+      <div>
+        <div class="footer-s">Sereo</div>
+        <div class="footer-tagline">晴域 · 數位美學顧問</div>
+      </div>
+      <div class="footer-links">
+        <a href="#insight">觀點</a>
+        <a href="#services">服務</a>
+        <a href="#case">作品</a>
+        <a href="#contact">合作</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="#services">服務項目</a>
-      <a href="#case">作品案例</a>
-      <a href="https://line.me/ti/p/~@625ummgh" target="_blank">聯絡我們</a>
-    </div>
+    <div class="footer-copy">© 2026 晴域 Sereo · 以美學校準戰略，讓品牌在數位世界具備呼吸感</div>
   </div>
-  <div class="footer-copy">© 2026 晴域 Sereo · 數位轉型顧問 · 讓好店被找到</div>
 </footer>
 
 <script>
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
+const cursor=document.getElementById('cursor');
+const ring=document.getElementById('cursorRing');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
 function animateCursor(){
   cursor.style.left=mx+'px';cursor.style.top=my+'px';
-  rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;
+  rx+=(mx-rx)*0.08;ry+=(my-ry)*0.08;
   ring.style.left=rx+'px';ring.style.top=ry+'px';
   requestAnimationFrame(animateCursor);
 }
 animateCursor();
 document.querySelectorAll('a,button').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2)';});
-  el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';});
+  el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(3)';cursor.style.opacity='0.4';});
+  el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';cursor.style.opacity='1';});
 });
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);
@@ -377,7 +379,7 @@ function toggleNav(){document.getElementById('mobileNav').classList.toggle('open
 function closeNav(){document.getElementById('mobileNav').classList.remove('open');}
 const revealObserver=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:0.1});
+},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
 </script>
 </body>
