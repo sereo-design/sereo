@@ -3,159 +3,210 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>晴域 Sereo｜數位美學顧問</title>
-<meta name="description" content="晴域 Sereo 以美學校準戰略，協助餐飲與中小品牌建立具備呼吸感的數位存在。">
+<title>晴域 Sereo｜讓好店被找到</title>
+<meta name="description" content="你的店值得被更多人找到。晴域 Sereo 協助餐飲與中小品牌建立真正有效的數位存在——官網、社群、導流、系統，一次到位。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #FFFDF9;
-  --bg2: #F9F6F0;
-  --bg3: #F2EDE4;
-  --ink: #1A1D1F;
-  --ink2: #4D433D;
-  --accent: #C8A96E;
-  --accent2: #E8C98A;
-  --line: rgba(200,169,110,0.2);
-  --line2: rgba(28,24,20,0.06);
+  --bg:   #FFFFFF;
+  --bg2:  #F7F7F7;
+  --bg3:  #EFEFEF;
+  --ink:  #111111;
+  --ink2: #555555;
+  --ink3: #999999;
+  --line: rgba(0,0,0,0.07);
+  --line2:rgba(0,0,0,0.04);
 }
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { background:var(--bg); color:var(--ink); font-family:'Noto Serif TC',serif; overflow-x:hidden; cursor:none; }
-.cursor { width:7px; height:7px; background:var(--ink); border-radius:50%; position:fixed; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform 0.15s; }
-.cursor-ring { width:28px; height:28px; border:1px solid rgba(26,29,31,0.25); border-radius:50%; position:fixed; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); }
-nav { position:fixed; top:0; left:0; right:0; z-index:200; padding:22px 64px; display:flex; justify-content:space-between; align-items:center; background:rgba(248,249,250,0.96); backdrop-filter:blur(20px); border-bottom:1px solid var(--line2); }
-.nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
-.nav-s { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:400; font-style:italic; color:var(--ink); line-height:1; }
-.nav-brand { display:flex; flex-direction:column; }
-.nav-en { font-family:'Cormorant Garamond',serif; font-size:0.95rem; letter-spacing:5px; color:var(--ink); font-weight:300; }
-.nav-zh { font-size:0.44rem; letter-spacing:7px; color:var(--ink2); font-weight:300; margin-top:2px; }
-.nav-links { display:flex; gap:44px; list-style:none; }
-.nav-links a { color:var(--ink2); text-decoration:none; font-size:0.65rem; letter-spacing:3px; font-weight:300; transition:color 0.3s; }
-.nav-links a:hover { color:var(--ink); }
-.nav-cta { font-size:0.65rem; letter-spacing:3px; color:var(--ink); border:0.5px solid var(--accent); padding:9px 20px; text-decoration:none; transition:all 0.3s; font-weight:400; }
-.nav-cta:hover { background:var(--accent2); }
-.nav-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
-.nav-toggle span { width:22px; height:1px; background:var(--ink); }
-#hero { min-height:100vh; padding:140px 64px 100px; display:flex; align-items:center; background:var(--bg); }
-.hero-inner { max-width:1300px; margin:0 auto; width:100%; }
-.hero-eyebrow { font-size:0.55rem; letter-spacing:5px; color:var(--ink2); font-weight:300; margin-bottom:44px; display:flex; align-items:center; gap:16px; opacity:0; animation:fadeIn 0.8s 0.3s ease both; }
-.hero-eyebrow::before { content:''; width:32px; height:1px; background:var(--accent); }
-h1.hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(3.2rem,6.5vw,6.5rem); font-weight:300; line-height:1.08; color:var(--ink); letter-spacing:-0.01em; opacity:0; animation:fadeUp 0.9s 0.5s ease both; }
-h1.hero-title em { font-style:italic; border:0.5px solid var(--accent); padding:0 10px; color:var(--ink); }
-.hero-bottom { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:end; margin-top:64px; opacity:0; animation:fadeUp 0.9s 0.8s ease both; }
-.hero-desc { font-size:0.82rem; line-height:2.3; color:var(--ink2); font-weight:300; letter-spacing:0.05em; }
-.hero-ctas { display:flex; flex-direction:column; gap:14px; align-items:flex-end; }
-.btn-primary { background:var(--ink); color:var(--bg); font-size:0.65rem; letter-spacing:3px; text-decoration:none; padding:14px 32px; transition:all 0.3s; font-weight:300; display:inline-block; }
-.btn-primary:hover { background:var(--bg); border:0.5px solid var(--accent); color:var(--ink); }
-.btn-secondary { font-size:0.65rem; letter-spacing:3px; color:var(--ink2); text-decoration:none; display:flex; align-items:center; gap:8px; transition:all 0.3s; font-weight:300; }
-.btn-secondary:hover { color:var(--ink); gap:14px; }
-.hero-stats { display:flex; border-top:1px solid var(--line); margin-top:80px; padding-top:40px; opacity:0; animation:fadeIn 0.8s 1.1s ease both; }
-.hero-stat { flex:1; padding-right:48px; border-right:1px solid var(--line); margin-right:48px; }
-.hero-stat:last-child { border:none; margin:0; padding:0; }
-.stat-num { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:300; color:var(--ink); line-height:1; display:block; }
-.stat-label { font-size:0.55rem; letter-spacing:3px; color:var(--ink2); margin-top:4px; display:block; font-weight:300; }
-#insight { padding:140px 64px; background:var(--ink); }
-.insight-inner { max-width:1300px; margin:0 auto; }
-.insight-top { display:grid; grid-template-columns:1fr 1fr; gap:80px; margin-bottom:80px; align-items:end; }
-.section-label { font-size:0.5rem; letter-spacing:5px; color:var(--accent); font-weight:300; margin-bottom:20px; display:block; }
-.section-label-dark { font-size:0.5rem; letter-spacing:5px; color:var(--ink2); font-weight:300; margin-bottom:20px; display:block; }
-.section-title-light { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,3.5vw,3.5rem); font-weight:300; color:#fff; line-height:1.15; font-style:italic; }
-.section-title-dark { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,3.5vw,3.5rem); font-weight:300; color:var(--ink); line-height:1.15; font-style:italic; margin-bottom:64px; }
-.insight-subdesc { font-size:0.75rem; line-height:2.3; color:rgba(255,255,255,0.5); font-weight:300; letter-spacing:0.05em; }
-.insight-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.06); }
-.insight-item { background:var(--ink); padding:48px 36px; transition:background 0.4s; }
-.insight-item:hover { background:#222528; }
-.insight-num { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:300; color:var(--accent); line-height:1; margin-bottom:20px; font-style:italic; display:block; opacity:0.8; }
-.insight-item h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:#fff; margin-bottom:14px; }
-.insight-item p { font-size:0.72rem; line-height:2.1; color:rgba(255,255,255,0.55); font-weight:300; letter-spacing:0.04em; }
-#services { padding:140px 64px; background:var(--bg); }
-.services-inner { max-width:1300px; margin:0 auto; }
-.services-category { margin-bottom:32px; margin-top:72px; padding-bottom:16px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:20px; }
-.services-category:first-of-type { margin-top:0; }
-.services-category-label { font-size:0.45rem; letter-spacing:5px; color:var(--accent); font-weight:300; white-space:nowrap; }
-.services-category-title { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:300; color:var(--ink2); font-style:italic; }
-.services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--line); }
-.service-card { background:var(--bg); padding:52px 44px; transition:background 0.4s; border:1px solid var(--line); position:relative; }
-.service-card:hover { background:var(--bg2); }
-.service-card.new-badge::after { content:'NEW'; position:absolute; top:20px; right:20px; font-size:0.42rem; letter-spacing:3px; color:var(--accent); border:0.5px solid var(--accent); padding:3px 8px; font-weight:300; }
-.service-num { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:var(--accent); line-height:1; margin-bottom:16px; display:block; font-style:italic; }
-.service-name { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:400; color:var(--ink); margin-bottom:4px; margin-top:16px; }
-.service-name-en { font-size:0.55rem; letter-spacing:4px; color:var(--ink2); font-weight:300; display:block; margin-bottom:20px; }
-.service-desc { font-size:0.75rem; line-height:2.2; color:var(--ink2); font-weight:300; letter-spacing:0.04em; margin-bottom:24px; }
-.service-points { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:28px; border-top:1px solid var(--line); padding-top:20px; }
-.service-points li { font-size:0.65rem; color:var(--ink2); display:flex; align-items:center; gap:12px; font-weight:300; letter-spacing:0.04em; }
-.service-points li::before { content:''; width:16px; height:1px; flex-shrink:0; background:var(--accent); }
-.service-card-inquiry { background:var(--bg2); display:flex; align-items:center; justify-content:center; min-height:280px; }
-.service-card-inquiry-inner { text-align:center; }
-.service-card-inquiry-inner .inq-icon { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:var(--accent); font-style:italic; display:block; margin-bottom:16px; }
-.service-card-inquiry-inner .inq-label { font-size:0.6rem; letter-spacing:4px; color:var(--ink2); font-weight:300; }
-#case { padding:140px 64px; background:var(--bg2); }
-.case-inner { max-width:1300px; margin:0 auto; }
-.case-card { display:grid; grid-template-columns:1fr 1fr; overflow:hidden; border:1px solid var(--line); }
-.case-info { padding:64px 52px; background:var(--bg); }
-.case-num { font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:rgba(26,29,31,0.06); line-height:1; font-style:italic; margin-bottom:28px; display:block; }
-.case-name { font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:400; color:var(--ink); margin-bottom:16px; }
-.case-desc { font-size:0.75rem; line-height:2.3; color:var(--ink2); font-weight:300; margin-bottom:28px; letter-spacing:0.04em; }
-.case-tags { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:36px; }
-.case-tag { font-size:0.5rem; letter-spacing:3px; padding:5px 12px; border:0.5px solid rgba(200,169,110,0.4); color:#4D433D; font-weight:300; }
-.case-link { font-size:0.62rem; letter-spacing:3px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all 0.3s; font-weight:300; background:var(--ink); color:var(--bg); padding:12px 24px; }
-.case-link:hover { background:var(--bg); border:0.5px solid var(--accent); color:var(--ink); gap:14px; }
-.case-visual { background:var(--bg3); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:8rem; color:rgba(26,29,31,0.05); font-style:italic; min-height:380px; position:relative; }
-.case-visual-label { position:absolute; bottom:28px; right:28px; font-size:0.55rem; letter-spacing:4px; color:var(--ink2); font-family:'Noto Serif TC',serif; font-weight:300; }
-#contact { padding:140px 64px; background:var(--ink); }
-.contact-inner { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:start; }
-.contact-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,4vw,4rem); font-weight:300; color:#fff; line-height:1.1; font-style:italic; margin-bottom:24px; }
-.contact-desc { font-size:0.75rem; line-height:2.3; color:rgba(255,255,255,0.5); font-weight:300; letter-spacing:0.05em; }
-.contact-actions { display:flex; flex-direction:column; gap:2px; }
-.contact-btn { display:flex; align-items:center; justify-content:space-between; padding:22px 28px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); text-decoration:none; color:#fff; font-size:0.65rem; letter-spacing:3px; font-weight:300; transition:all 0.3s; }
-.contact-btn:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.2); }
-.contact-btn.accent { border:0.5px solid var(--accent); background:var(--accent2); color:var(--ink); }
-.contact-btn.accent:hover { background:var(--accent); }
-.contact-arrow { opacity:0.4; transition:all 0.3s; font-size:0.9rem; }
-.contact-btn:hover .contact-arrow { opacity:1; transform:translateX(4px); }
-footer { background:#111214; padding:52px 64px 36px; }
-.footer-inner { max-width:1300px; margin:0 auto; }
-.footer-top { display:flex; justify-content:space-between; align-items:center; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:24px; flex-wrap:wrap; gap:20px; }
-.footer-logo-s { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; font-style:italic; color:rgba(255,255,255,0.7); }
-.footer-tagline { font-size:0.48rem; letter-spacing:4px; color:rgba(255,255,255,0.2); font-weight:300; margin-top:3px; }
-.footer-links { display:flex; gap:28px; }
-.footer-links a { color:rgba(255,255,255,0.3); text-decoration:none; font-size:0.6rem; letter-spacing:2px; transition:color 0.3s; font-weight:300; }
-.footer-links a:hover { color:rgba(255,255,255,0.7); }
-.footer-copy { font-size:0.5rem; letter-spacing:2px; color:rgba(255,255,255,0.15); font-weight:300; }
-.mobile-nav { display:none; position:fixed; top:72px; left:0; right:0; background:rgba(248,249,250,0.99); padding:28px 20px; border-bottom:1px solid var(--line); z-index:199; flex-direction:column; gap:16px; }
-.mobile-nav.open { display:flex; }
-.mobile-nav a { color:var(--ink2); text-decoration:none; font-size:0.85rem; letter-spacing:2px; padding:10px 0; border-bottom:1px solid var(--line2); font-weight:300; }
-.mobile-nav a:last-child { border:none; border:0.5px solid var(--accent); color:var(--ink); padding:12px 16px; text-align:center; letter-spacing:3px; }
-.reveal { opacity:0; transform:translateY(20px); transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
-.reveal.visible { opacity:1; transform:translateY(0); }
-.reveal-d1 { transition-delay:0.1s; }
-.reveal-d2 { transition-delay:0.2s; }
-.reveal-d3 { transition-delay:0.3s; }
-@keyframes fadeUp { from{opacity:0;transform:translateY(28px);} to{opacity:1;transform:translateY(0);} }
-@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-@media(max-width:960px) {
-  nav { padding:16px 20px; }
-  .nav-links, .nav-cta { display:none; }
-  .nav-toggle { display:flex; }
-  #hero { padding:110px 20px 80px; }
-  .hero-bottom { grid-template-columns:1fr; gap:32px; }
-  .hero-ctas { align-items:flex-start; }
-  .hero-stats { flex-wrap:wrap; }
-  .hero-stat { min-width:45%; border-right:none; margin:0; padding:0 0 24px 0; }
-  #insight { padding:80px 20px; }
-  .insight-top { grid-template-columns:1fr; gap:28px; }
-  .insight-grid { grid-template-columns:1fr; }
-  #services { padding:80px 20px; }
-  .services-grid { grid-template-columns:1fr; }
-  .services-category { margin-top:48px; }
-  #case { padding:80px 20px; }
-  .case-card { grid-template-columns:1fr; }
-  .case-visual { min-height:160px; }
-  #contact { padding:80px 20px; }
-  .contact-inner { grid-template-columns:1fr; gap:48px; }
-  footer { padding:40px 20px 28px; }
-  body { cursor:auto; }
-  .cursor, .cursor-ring { display:none; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Serif TC',serif;overflow-x:hidden;cursor:none;}
+.cursor{width:7px;height:7px;background:var(--ink);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s;}
+.cursor-ring{width:28px;height:28px;border:1px solid rgba(17,17,17,0.18);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 64px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line2);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-s{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;font-style:italic;color:var(--ink);line-height:1;}
+.nav-brand{display:flex;flex-direction:column;}
+.nav-en{font-family:'Cormorant Garamond',serif;font-size:0.95rem;letter-spacing:5px;color:var(--ink);font-weight:300;}
+.nav-zh{font-size:0.44rem;letter-spacing:7px;color:var(--ink2);font-weight:300;margin-top:2px;}
+.nav-links{display:flex;gap:44px;list-style:none;}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:0.65rem;letter-spacing:3px;font-weight:300;transition:color 0.3s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{font-size:0.65rem;letter-spacing:3px;color:var(--bg);background:var(--ink);padding:10px 22px;text-decoration:none;transition:all 0.3s;font-weight:300;}
+.nav-cta:hover{background:#333;}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
+.nav-toggle span{width:22px;height:1px;background:var(--ink);}
+
+/* HERO — 全新敘事 */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--bg);}
+.hero-left{padding:160px 64px 80px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line);}
+.hero-right{padding:160px 64px 80px;display:flex;flex-direction:column;justify-content:space-between;background:var(--ink);}
+.hero-eyebrow{font-size:0.5rem;letter-spacing:5px;color:var(--ink3);font-weight:300;margin-bottom:40px;opacity:0;animation:fadeIn 0.8s 0.3s ease both;}
+h1.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,5.2rem);font-weight:300;line-height:1.1;color:var(--ink);letter-spacing:-0.01em;opacity:0;animation:fadeUp 0.9s 0.4s ease both;}
+h1.hero-title strong{font-weight:400;font-style:italic;display:block;}
+.hero-sub{font-size:0.8rem;line-height:2.2;color:var(--ink2);font-weight:300;letter-spacing:0.04em;margin-top:36px;max-width:380px;opacity:0;animation:fadeUp 0.9s 0.6s ease both;}
+.hero-ctas{display:flex;gap:12px;margin-top:48px;opacity:0;animation:fadeUp 0.9s 0.8s ease both;}
+.btn-primary{background:var(--ink);color:var(--bg);font-size:0.62rem;letter-spacing:3px;text-decoration:none;padding:14px 32px;transition:all 0.3s;font-weight:300;display:inline-block;}
+.btn-primary:hover{background:#333;}
+.btn-ghost{font-size:0.62rem;letter-spacing:3px;color:var(--ink);border:0.5px solid var(--ink);text-decoration:none;padding:14px 24px;transition:all 0.3s;font-weight:300;}
+.btn-ghost:hover{background:var(--ink);color:var(--bg);}
+
+/* Hero 右側：痛點陳述 */
+.hero-right-label{font-size:0.48rem;letter-spacing:5px;color:rgba(255,255,255,0.3);font-weight:300;opacity:0;animation:fadeIn 0.8s 0.5s ease both;}
+.hero-pains{display:flex;flex-direction:column;gap:0;opacity:0;animation:fadeUp 0.9s 0.7s ease both;margin-top:32px;}
+.hero-pain{padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:flex-start;gap:20px;}
+.hero-pain:first-child{border-top:1px solid rgba(255,255,255,0.07);}
+.pain-num{font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,255,255,0.2);font-style:italic;flex-shrink:0;line-height:1.6;}
+.pain-text{font-size:0.75rem;line-height:2;color:rgba(255,255,255,0.55);font-weight:300;letter-spacing:0.03em;}
+.pain-text em{color:rgba(255,255,255,0.85);font-style:normal;}
+.hero-right-cta{opacity:0;animation:fadeIn 0.8s 1s ease both;}
+.hero-right-cta a{font-size:0.6rem;letter-spacing:3px;color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.3s;}
+.hero-right-cta a:hover{color:#fff;}
+
+/* STATS 橫條 */
+#stats{display:flex;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.stat-item{flex:1;padding:36px 48px;border-right:1px solid var(--line);}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--ink);line-height:1;display:block;}
+.stat-label{font-size:0.52rem;letter-spacing:3px;color:var(--ink3);margin-top:6px;display:block;font-weight:300;}
+
+/* WHY — 為什麼是晴域（新區塊） */
+#why{padding:140px 64px;background:var(--bg2);}
+.why-inner{max-width:1300px;margin:0 auto;}
+.why-top{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin-bottom:80px;align-items:start;}
+.why-label{font-size:0.5rem;letter-spacing:5px;color:var(--ink3);font-weight:300;margin-bottom:20px;display:block;}
+.why-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.2vw,3.2rem);font-weight:300;color:var(--ink);line-height:1.15;font-style:italic;}
+.why-body{padding-top:8px;}
+.why-intro{font-size:0.82rem;line-height:2.4;color:var(--ink2);font-weight:300;letter-spacing:0.04em;margin-bottom:40px;}
+.why-intro strong{color:var(--ink);font-weight:400;}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line);}
+.why-card{background:var(--bg2);padding:40px 36px;transition:background 0.3s;}
+.why-card:hover{background:var(--bg);}
+.why-card-icon{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:rgba(0,0,0,0.1);font-style:italic;line-height:1;margin-bottom:16px;display:block;}
+.why-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:12px;}
+.why-card p{font-size:0.7rem;line-height:2.1;color:var(--ink2);font-weight:300;letter-spacing:0.03em;}
+
+/* INSIGHT */
+#insight{padding:140px 64px;background:var(--ink);}
+.insight-inner{max-width:1300px;margin:0 auto;}
+.insight-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:80px;align-items:end;}
+.section-label-light{font-size:0.5rem;letter-spacing:5px;color:rgba(255,255,255,0.25);font-weight:300;margin-bottom:20px;display:block;}
+.section-label-dark{font-size:0.5rem;letter-spacing:5px;color:var(--ink3);font-weight:300;margin-bottom:20px;display:block;}
+.section-title-light{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;color:#fff;line-height:1.15;font-style:italic;}
+.section-title-dark{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:300;color:var(--ink);line-height:1.15;font-style:italic;margin-bottom:64px;}
+.insight-subdesc{font-size:0.75rem;line-height:2.3;color:rgba(255,255,255,0.38);font-weight:300;letter-spacing:0.05em;}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);}
+.insight-item{background:var(--ink);padding:48px 36px;transition:background 0.4s;}
+.insight-item:hover{background:#1a1a1a;}
+.insight-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(255,255,255,0.1);line-height:1;margin-bottom:20px;font-style:italic;display:block;}
+.insight-item h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:#fff;margin-bottom:14px;}
+.insight-item p{font-size:0.72rem;line-height:2.1;color:rgba(255,255,255,0.45);font-weight:300;letter-spacing:0.04em;}
+
+/* SERVICES */
+#services{padding:140px 64px;background:var(--bg);}
+.services-inner{max-width:1300px;margin:0 auto;}
+.services-category{margin-bottom:32px;margin-top:72px;padding-bottom:16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:20px;}
+.services-category:first-of-type{margin-top:0;}
+.services-category-label{font-size:0.45rem;letter-spacing:5px;color:var(--ink3);font-weight:300;white-space:nowrap;}
+.services-category-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;color:var(--ink2);font-style:italic;}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);}
+.service-card{background:var(--bg);padding:52px 44px;transition:background 0.4s;position:relative;}
+.service-card:hover{background:var(--bg2);}
+.service-card.new-badge::after{content:'NEW';position:absolute;top:20px;right:20px;font-size:0.42rem;letter-spacing:3px;color:var(--ink3);border:0.5px solid var(--ink3);padding:3px 8px;font-weight:300;}
+.service-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(0,0,0,0.08);line-height:1;margin-bottom:16px;display:block;font-style:italic;}
+.service-name{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--ink);margin-bottom:4px;margin-top:16px;}
+.service-name-en{font-size:0.55rem;letter-spacing:4px;color:var(--ink3);font-weight:300;display:block;margin-bottom:20px;}
+.service-desc{font-size:0.75rem;line-height:2.2;color:var(--ink2);font-weight:300;letter-spacing:0.04em;margin-bottom:24px;}
+.service-points{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;border-top:1px solid var(--line);padding-top:20px;}
+.service-points li{font-size:0.65rem;color:var(--ink2);display:flex;align-items:center;gap:12px;font-weight:300;letter-spacing:0.04em;}
+.service-points li::before{content:'';width:16px;height:1px;flex-shrink:0;background:var(--ink);}
+.service-card-inquiry{background:var(--bg2);display:flex;align-items:center;justify-content:center;min-height:280px;}
+.inq-inner{text-align:center;}
+.inq-icon{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(0,0,0,0.12);font-style:italic;display:block;margin-bottom:16px;}
+.inq-label{font-size:0.6rem;letter-spacing:4px;color:var(--ink3);font-weight:300;}
+
+/* CASE */
+#case{padding:140px 64px;background:var(--bg2);}
+.case-inner{max-width:1300px;margin:0 auto;}
+.case-card{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border:1px solid var(--line);}
+.case-info{padding:64px 52px;background:var(--bg);}
+.case-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(0,0,0,0.04);line-height:1;font-style:italic;margin-bottom:28px;display:block;}
+.case-name{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:400;color:var(--ink);margin-bottom:16px;}
+.case-desc{font-size:0.75rem;line-height:2.3;color:var(--ink2);font-weight:300;margin-bottom:28px;letter-spacing:0.04em;}
+.case-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px;}
+.case-tag{font-size:0.5rem;letter-spacing:3px;padding:5px 12px;border:0.5px solid rgba(0,0,0,0.12);color:var(--ink2);font-weight:300;}
+.case-link{font-size:0.62rem;letter-spacing:3px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;font-weight:300;background:var(--ink);color:var(--bg);padding:12px 24px;}
+.case-link:hover{background:#333;gap:14px;}
+.case-visual{background:var(--bg3);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:8rem;color:rgba(0,0,0,0.04);font-style:italic;min-height:380px;position:relative;}
+.case-visual-label{position:absolute;bottom:28px;right:28px;font-size:0.55rem;letter-spacing:4px;color:var(--ink3);font-family:'Noto Serif TC',serif;font-weight:300;}
+
+/* CONTACT */
+#contact{padding:140px 64px;background:var(--ink);}
+.contact-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:#fff;line-height:1.1;font-style:italic;margin-bottom:20px;}
+.contact-sub{font-size:0.75rem;line-height:2.3;color:rgba(255,255,255,0.38);font-weight:300;letter-spacing:0.05em;margin-bottom:0;}
+.contact-actions{display:flex;flex-direction:column;gap:2px;}
+.contact-btn{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);text-decoration:none;color:#fff;font-size:0.65rem;letter-spacing:3px;font-weight:300;transition:all 0.3s;}
+.contact-btn:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.16);}
+.contact-btn.primary{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);}
+.contact-btn.primary:hover{background:rgba(255,255,255,0.14);}
+.contact-arrow{opacity:0.25;transition:all 0.3s;}
+.contact-btn:hover .contact-arrow{opacity:1;transform:translateX(4px);}
+
+/* FOOTER */
+footer{background:#0a0a0a;padding:52px 64px 36px;}
+.footer-inner{max-width:1300px;margin:0 auto;}
+.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.05);margin-bottom:24px;flex-wrap:wrap;gap:20px;}
+.footer-logo-s{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;font-style:italic;color:rgba(255,255,255,0.5);}
+.footer-tagline{font-size:0.48rem;letter-spacing:4px;color:rgba(255,255,255,0.15);font-weight:300;margin-top:3px;}
+.footer-links{display:flex;gap:28px;}
+.footer-links a{color:rgba(255,255,255,0.2);text-decoration:none;font-size:0.6rem;letter-spacing:2px;transition:color 0.3s;font-weight:300;}
+.footer-links a:hover{color:rgba(255,255,255,0.55);}
+.footer-copy{font-size:0.5rem;letter-spacing:2px;color:rgba(255,255,255,0.1);font-weight:300;}
+
+/* MOBILE NAV */
+.mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,0.99);padding:28px 20px;border-bottom:1px solid var(--line);z-index:199;flex-direction:column;gap:16px;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{color:var(--ink2);text-decoration:none;font-size:0.85rem;letter-spacing:2px;padding:10px 0;border-bottom:1px solid var(--line2);font-weight:300;}
+.mobile-nav a:last-child{border:none;background:var(--ink);color:var(--bg);padding:12px 16px;text-align:center;letter-spacing:3px;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1),transform 0.9s cubic-bezier(0.22,1,0.36,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:0.1s;}
+.reveal-d2{transition-delay:0.2s;}
+.reveal-d3{transition-delay:0.3s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+@media(max-width:960px){
+  nav{padding:16px 20px;}
+  .nav-links,.nav-cta{display:none;}
+  .nav-toggle{display:flex;}
+  #hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:110px 20px 60px;border-right:none;border-bottom:1px solid var(--line);}
+  .hero-right{padding:60px 20px 80px;}
+  .hero-ctas{flex-direction:column;}
+  #stats{flex-wrap:wrap;}
+  .stat-item{min-width:50%;border-bottom:1px solid var(--line);}
+  #why{padding:80px 20px;}
+  .why-top{grid-template-columns:1fr;gap:28px;}
+  .why-grid{grid-template-columns:1fr;}
+  #insight{padding:80px 20px;}
+  .insight-top{grid-template-columns:1fr;gap:28px;}
+  .insight-grid{grid-template-columns:1fr;}
+  #services{padding:80px 20px;}
+  .services-grid{grid-template-columns:1fr;}
+  .services-category{margin-top:48px;}
+  #case{padding:80px 20px;}
+  .case-card{grid-template-columns:1fr;}
+  .case-visual{min-height:160px;}
+  #contact{padding:80px 20px;}
+  .contact-inner{grid-template-columns:1fr;gap:48px;}
+  footer{padding:40px 20px 28px;}
+  body{cursor:auto;}
+  .cursor,.cursor-ring{display:none;}
 }
 </style>
 </head>
@@ -172,120 +223,184 @@ footer { background:#111214; padding:52px 64px 36px; }
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#insight">觀點</a></li>
+    <li><a href="#why">關於晴域</a></li>
     <li><a href="#services">服務</a></li>
     <li><a href="#case">作品</a></li>
     <li><a href="#contact">合作</a></li>
   </ul>
-  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="nav-cta">聯繫品牌管家</a>
+  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="nav-cta">免費諮詢</a>
   <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-nav" id="mobileNav">
-  <a href="#insight" onclick="closeNav()">觀點</a>
+  <a href="#why" onclick="closeNav()">關於晴域</a>
   <a href="#services" onclick="closeNav()">服務</a>
   <a href="#case" onclick="closeNav()">作品</a>
-  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" onclick="closeNav()">聯繫品牌管家</a>
+  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" onclick="closeNav()">免費諮詢</a>
 </div>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <section id="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">數位美學顧問 · Digital Aesthetics Studio</div>
-    <h1 class="hero-title">以美學校準戰略，<br>讓品牌在數位世界<em>具備呼吸感</em></h1>
-    <div class="hero-bottom">
-      <p class="hero-desc">我們不架設網站，我們為品牌建構數位存在的方式。每一個決策都從美學出發，每一行代碼都服務於商業邏輯。晴域相信，數位化不是技術問題，而是美學問題。</p>
-      <div class="hero-ctas">
-        <a href="#case" class="btn-primary">查看作品</a>
-        <a href="#services" class="btn-secondary">了解服務 →</a>
+  <div class="hero-left">
+    <div class="hero-eyebrow">晴域 Sereo · 數位品牌顧問</div>
+    <h1 class="hero-title">
+      你的店，<br>
+      <strong>值得被更多人找到。</strong>
+    </h1>
+    <p class="hero-sub">你把心力放在做好產品、服務好客人。但網路上，沒有人替你說這件事。晴域幫你把好店的故事，轉譯成數位世界聽得懂的語言。</p>
+    <div class="hero-ctas">
+      <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="btn-primary">免費聊聊我的店</a>
+      <a href="#services" class="btn-ghost">看看我們做什麼</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div>
+      <span class="hero-right-label">你是否也有這些困擾？</span>
+      <div class="hero-pains">
+        <div class="hero-pain">
+          <span class="pain-num">01</span>
+          <p class="pain-text">朋友推薦來的客人說，<em>「我找了很久才找到你」</em>——但你明明就在那裡。</p>
+        </div>
+        <div class="hero-pain">
+          <span class="pain-num">02</span>
+          <p class="pain-text">有官網、有 IG、有 LINE，但感覺<em>都在浪費時間</em>，沒帶來真正的客人。</p>
+        </div>
+        <div class="hero-pain">
+          <span class="pain-num">03</span>
+          <p class="pain-text">想認真做數位，但<em>不知道從哪裡開始</em>，也不確定找誰才值得信任。</p>
+        </div>
+        <div class="hero-pain">
+          <span class="pain-num">04</span>
+          <p class="pain-text">看過幾家廠商，<em>做完就不見了</em>——你需要的是有人陪著走，不是丟個網站給你。</p>
+        </div>
       </div>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><span class="stat-num">7</span><span class="stat-label">天交付官網</span></div>
-      <div class="hero-stat"><span class="stat-num">100%</span><span class="stat-label">客戶滿意度</span></div>
-      <div class="hero-stat"><span class="stat-num">24h</span><span class="stat-label">售後支援響應</span></div>
-      <div class="hero-stat"><span class="stat-num">∞</span><span class="stat-label">品牌可能性</span></div>
+    <div class="hero-right-cta">
+      <a href="#why">這些，我們都經歷過 →</a>
     </div>
   </div>
 </section>
 
-<!-- INSIGHT -->
+<!-- ═══ STATS ═══ -->
+<div id="stats">
+  <div class="stat-item reveal"><span class="stat-num">7</span><span class="stat-label">天交付官網</span></div>
+  <div class="stat-item reveal reveal-d1"><span class="stat-num">100%</span><span class="stat-label">客戶滿意度</span></div>
+  <div class="stat-item reveal reveal-d2"><span class="stat-num">24h</span><span class="stat-label">售後支援響應</span></div>
+  <div class="stat-item reveal reveal-d3"><span class="stat-num">∞</span><span class="stat-label">各行各業，都能規劃</span></div>
+</div>
+
+<!-- ═══ WHY 晴域（新區塊）═══ -->
+<section id="why">
+  <div class="why-inner">
+    <div class="why-top reveal">
+      <div>
+        <span class="why-label">WHY SEREO · 為什麼是晴域</span>
+        <h2 class="why-title">我們不只是<br>幫你架網站的人</h2>
+      </div>
+      <div class="why-body">
+        <p class="why-intro">市面上做網站的人很多，懂技術的也不少。但大多數交完就結束了——你拿到一個網址，卻不知道接下來怎麼辦。<br><br><strong>晴域不一樣的地方，是我們懂你的行業。</strong>我們服務過餐飲、特色小店、服務業，我們知道業主最大的痛點不是沒有網站，而是沒有人幫你想清楚「數位存在對你的生意究竟有什麼用」。<br><br>所以我們陪你想、陪你做、做完之後還陪你走。</p>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="why-card-icon">一</span>
+        <h3>我們懂你的行業</h3>
+        <p>不是把你當成「又一個客戶」。在提案之前，我們先理解你的客群、你的營運節奏、你最想解決的問題。每個方案都是為你量身規劃的，不是套模板。</p>
+      </div>
+      <div class="why-card reveal reveal-d1">
+        <span class="why-card-icon">二</span>
+        <h3>做完不是終點</h3>
+        <p>很多廠商交付之後就消失了。我們把「做完之後」視為服務的開始——24 小時響應、定期健檢、數據追蹤，你的數位品牌需要持續照顧，我們一直在。</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-card-icon">三</span>
+        <h3>美感是我們的底線</h3>
+        <p>我們拒絕交出讓你不好意思分享的作品。每一個官網、每一份文案、每一個設計決策，都要能讓你驕傲地說「這是我的品牌」。</p>
+      </div>
+      <div class="why-card reveal reveal-d1">
+        <span class="why-card-icon">四</span>
+        <h3>你省下的時間有價值</h3>
+        <p>我們把繁瑣的數位雜務自動化，讓你的時間花在真正重要的事上——做好產品、好好款待客人。數位的部分，交給我們。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INSIGHT ═══ -->
 <section id="insight">
   <div class="insight-inner">
     <div class="insight-top reveal">
       <div>
-        <span class="section-label">INSIGHT · 觀點</span>
-        <h2 class="section-title-light">我們如何理解<br>品牌與數位的關係</h2>
+        <span class="section-label-light">INSIGHT · 我們的觀點</span>
+        <h2 class="section-title-light">數位化這件事，<br>比你想的更簡單</h2>
       </div>
-      <p class="insight-subdesc">在我們看來，數位化的核心不是技術堆砌，而是美學決策。一個品牌在數位世界的樣貌，決定了它在客人心中的份量與記憶深度。</p>
+      <p class="insight-subdesc">大多數業主對「數位化」的印象是複雜、燒錢、做了也不知道有沒有用。我們的工作，就是把它變成你聽得懂、用得上、看得到效果的東西。</p>
     </div>
     <div class="insight-grid">
       <div class="insight-item reveal">
         <span class="insight-num">01</span>
-        <h3>消除阻力</h3>
-        <p>我們不只是標註座標，而是優化客群抵達品牌門戶的每一條路徑，消除品牌與客人之間的最後一哩阻力，讓每一個「想去」都能順暢變成「已到達」。</p>
+        <h3>先被找到，才有後續</h3>
+        <p>再好的店，如果在網路上找不到，就等於不存在。我們先幫你解決「被找到」這件最基本、卻最常被忽略的事。</p>
       </div>
       <div class="insight-item reveal reveal-d1">
         <span class="insight-num">02</span>
-        <h3>視覺對焦</h3>
-        <p>拒絕廉價的代碼堆砌。每一處像素的配置，都應具備品牌獨有的氣息與辨識度。我們建構的不只是網站，而是一個具備品牌個性的數位載體。</p>
+        <h3>好感度決定第一印象</h3>
+        <p>客人看到你的官網或 IG 的那三秒，就決定要不要繼續了解你。視覺不是裝飾，是你的第一句話。</p>
       </div>
       <div class="insight-item reveal reveal-d2">
         <span class="insight-num">03</span>
-        <h3>數位留白</h3>
-        <p>自動化不應是冷冰冰的刷屏機器。我們在代碼中注入溫度，讓系統為您代理繁瑣，同時保留品牌最珍貴的人文價值與溫度。</p>
+        <h3>系統讓你從重複勞動中解放</h3>
+        <p>訂位、回覆、推播——這些事不應該佔用你最寶貴的時間。讓系統代勞，你去做只有你能做的事。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ═══ SERVICES ═══ -->
 <section id="services">
   <div class="services-inner">
     <span class="section-label-dark">SERVICES · 服務</span>
-    <h2 class="section-title-dark">我們提供的不是工具，<br>是解決方案</h2>
+    <h2 class="section-title-dark">從被找到，到留住客人，<br>我們全程陪你走</h2>
 
-    <!-- PHASE 01 -->
     <div class="services-category reveal">
       <span class="services-category-label">PHASE 01</span>
-      <span class="services-category-title">建立數位存在 · Establish Presence</span>
+      <span class="services-category-title">讓你先被找到 · Establish Presence</span>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
         <span class="service-num">01</span>
         <div class="service-name">品牌數位地基建構</div>
         <span class="service-name-en">THE FOUNDATION · 形象官網</span>
-        <p class="service-desc">拒絕臃腫的公版代碼。我們為您的品牌量身打造專屬的數位門戶，強調極速載入與美學校準。我們不只提供一個網址，而是確保每一處像素的跳動，都能精準傳遞您的品牌 DNA。</p>
+        <p class="service-desc">你的官網是客人在決定要不要上門之前，最先看到你的地方。我們為你量身打造，不用公版模板，確保每一處細節都在替你說「這家店值得信任」。</p>
         <ul class="service-points">
-          <li>網域權威建立與 SEO 結構優化</li>
-          <li>響應式動態排版，手機電腦同步完美</li>
-          <li>7 天內交付，品牌快速上線</li>
+          <li>網域建立與 SEO 結構優化</li>
+          <li>響應式排版，手機電腦同步完美</li>
+          <li>7 天內交付，快速上線</li>
         </ul>
       </div>
       <div class="service-card reveal reveal-d1">
         <span class="service-num">02</span>
         <div class="service-name">地圖流量攻勢包</div>
         <span class="service-name-en">LOCATION LOGIC · 導航優化</span>
-        <p class="service-desc">消除品牌與客人間的最後一哩阻力。地址不應只是靜態文字，我們將其轉化為一鍵直達的獲客入口，透過地圖權威優化與精準引流路徑，確保每一位搜尋您的客人都能順暢踏入店門。</p>
+        <p class="service-desc">「附近餐廳」、「板橋夜宵」——客人在搜尋的當下，你有沒有出現？我們把你的地圖資訊校準到位，讓每一個搜尋都能找到你、導航到你。</p>
         <ul class="service-points">
           <li>Google Maps 商家資訊全面校準</li>
           <li>一鍵導航按鈕精準到位</li>
-          <li>Google 評價策略規劃與口碑經營</li>
+          <li>Google 評價策略與口碑經營</li>
         </ul>
       </div>
     </div>
 
-    <!-- PHASE 02 -->
     <div class="services-category reveal">
       <span class="services-category-label">PHASE 02</span>
-      <span class="services-category-title">吸引流量，接住每一位客人 · Attract & Capture</span>
+      <span class="services-category-title">接住每一位客人 · Attract & Capture</span>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
         <span class="service-num">03</span>
         <div class="service-name">品牌隨身管家</div>
         <span class="service-name-en">SEREO BUTLER · LINE 智能接待</span>
-        <p class="service-desc">在 AI 氾濫的時代，我們為您代理繁瑣的數位雜務，同時保留品牌最珍貴的人文溫度。從自動化溝通協議到智能選單，讓您的品牌在數位世界中自主呼吸、穩定成長。</p>
+        <p class="service-desc">客人傳訊息來問，你正在忙——這一條訊息，可能就是一張訂單、一位新客。我們幫你設定好自動接待系統，讓品牌 24 小時都在線上，不漏接任何人。</p>
         <ul class="service-points">
           <li>LINE 官方帳號完整建置</li>
           <li>智能圖文選單與關鍵字自動回覆</li>
@@ -296,7 +411,7 @@ footer { background:#111214; padding:52px 64px 36px; }
         <span class="service-num">04</span>
         <div class="service-name">品牌內容引擎</div>
         <span class="service-name-en">CONTENT OS · 社群內容策略</span>
-        <p class="service-desc">有帳號不等於有存在感。我們為您規劃每月社群內容行事曆，從貼文腳本到短影音框架，讓您的品牌在 IG 與 Facebook 上持續發出聲音——不是為了刷存在感，而是讓對的人在對的時刻找到您。</p>
+        <p class="service-desc">有帳號不等於有存在感。你不知道要發什麼、發了沒人看——我們幫你規劃內容方向、寫腳本、定主題，讓你的社群開始真正為你引流。</p>
         <ul class="service-points">
           <li>每月內容行事曆規劃與主題設定</li>
           <li>IG／FB 貼文腳本代寫</li>
@@ -307,18 +422,18 @@ footer { background:#111214; padding:52px 64px 36px; }
         <span class="service-num">05</span>
         <div class="service-name">智能訂位引擎</div>
         <span class="service-name-en">RESERVATION OS · 自動化訂單系統</span>
-        <p class="service-desc">讓訂位與訂單不再依賴人工接聽。我們為您建構一套無縫嵌入品牌體驗的自動化流程——從接單、確認到提醒，系統靜默運作，您的團隊專注在真正重要的事：款待每一位到訪的客人。</p>
+        <p class="service-desc">用電話接訂位、用紙本記訂單——你花在這上面的時間，值得更好的用途。我們幫你把訂位、確認、提醒全部自動化，減少爽約、減少漏單、減少重複勞動。</p>
         <ul class="service-points">
           <li>線上訂位表單與即時確認通知</li>
           <li>自動提醒機制，有效降低爽約率</li>
-          <li>訂單資料結構化，告別紙本與口頭記錄</li>
+          <li>訂單資料結構化，告別紙本記錄</li>
         </ul>
       </div>
       <div class="service-card new-badge reveal reveal-d1">
         <span class="service-num">06</span>
         <div class="service-name">品牌登場儀式</div>
         <span class="service-name-en">LAUNCH SPRINT · 開幕衝流量包</span>
-        <p class="service-desc">每一次開幕都只有一次。我們在您正式登場的前後兩週，集中火力打造數位暖場——內容預熱、曝光衝刺、即時監控，讓好奇的陌生人在開幕當天就知道您的存在，而不是三個月後才被算法推薦到。</p>
+        <p class="service-desc">開幕只有一次。我們在你正式開店的前後兩週，集中打造數位暖場——讓陌生人在你開幕當天就知道你的存在，而不是三個月後才被算法推薦到。</p>
         <ul class="service-points">
           <li>開幕前 2 週數位暖場內容規劃</li>
           <li>Google 與社群曝光集中衝刺</li>
@@ -327,17 +442,16 @@ footer { background:#111214; padding:52px 64px 36px; }
       </div>
     </div>
 
-    <!-- PHASE 03 -->
     <div class="services-category reveal">
       <span class="services-category-label">PHASE 03</span>
-      <span class="services-category-title">留住客人，讓數據說話 · Retain & Optimize</span>
+      <span class="services-category-title">讓客人一來再來 · Retain & Optimize</span>
     </div>
     <div class="services-grid">
       <div class="service-card new-badge reveal">
         <span class="service-num">07</span>
         <div class="service-name">熟客培育系統</div>
         <span class="service-name-en">LOYALTY ENGINE · 回頭客經營</span>
-        <p class="service-desc">吸引新客的成本是留住舊客的五倍。我們為您建立一套讓客人從「來過一次」變成「常客」的回訪驅動機制——推播策略、集點誘因、生日關懷，讓每一位客人都感受到被記得的溫度。</p>
+        <p class="service-desc">來過一次的客人，是你最值錢的資產。我們幫你建立回訪機制——對的時機推對的訊息，讓「偶爾來」的客人變成「每週來」的熟客。</p>
         <ul class="service-points">
           <li>LINE 分眾推播策略設計</li>
           <li>集點／回訪誘因機制建置</li>
@@ -348,18 +462,18 @@ footer { background:#111214; padding:52px 64px 36px; }
         <span class="service-num">08</span>
         <div class="service-name">品牌數位診所</div>
         <span class="service-name-en">WEEKLY PULSE · 數據週報與洞察</span>
-        <p class="service-desc">數字是品牌的生命跡象。我們每週為您整合流量、互動與轉換數據，搭配 AI 解讀提煉出可執行的改善建議。不是冷硬的報表，而是一份讀得懂、用得上的品牌健康週誌。</p>
+        <p class="service-desc">你的官網有多少人看？哪個時段最多人搜尋你？這些數字在告訴你重要的事，但大多數業主從來沒有人幫他們解讀過。我們每週幫你整理、解讀、給建議。</p>
         <ul class="service-points">
           <li>每週數據摘要，重點一覽無遺</li>
           <li>AI 輔助分析，具體指出優化方向</li>
-          <li>長期趨勢追蹤，讓決策有所依據</li>
+          <li>長期趨勢追蹤，決策有所依據</li>
         </ul>
       </div>
       <div class="service-card reveal">
         <span class="service-num">09</span>
         <div class="service-name">晴域隨身顧問</div>
-        <span class="service-name-en">RETAINER · 月費維護制</span>
-        <p class="service-desc">持續性的數位美學維護。品牌的數位存在需要定期校準，就像實體店面需要定期打掃一樣。內容微調、故障排除、定期健檢，讓您的品牌保持最佳狀態，您只需專心做好本業。</p>
+        <span class="service-name-en">RETAINER · 月費陪跑制</span>
+        <p class="service-desc">品牌的數位狀態需要持續照顧，不是做完就好。月費制讓你有一個隨時可以問、隨時幫你盯著的數位夥伴——你專心做好本業，數位的事交給我們。</p>
         <ul class="service-points">
           <li>24 小時故障排除響應</li>
           <li>內容定期微調與優化</li>
@@ -370,7 +484,7 @@ footer { background:#111214; padding:52px 64px 36px; }
         <span class="service-num">10</span>
         <div class="service-name">多語言品牌延伸</div>
         <span class="service-name-en">MULTILINGUAL · 跨語言加值服務</span>
-        <p class="service-desc">讓不同語言的客人都能感受到同樣的品牌溫度。我們提供中英日韓泰越六語系的菜單、官網與社群文案在地化服務，為有觀光客群或計畫跨境拓展的品牌，打開語言的邊界。</p>
+        <p class="service-desc">外國旅客看不懂你的菜單，轉身就走了。我們提供中英日韓泰越六語系的在地化服務，讓每一位走進你店裡的客人，都能感受到同樣的溫度。</p>
         <ul class="service-points">
           <li>中／英雙語為標準配備</li>
           <li>日、韓、泰、越語系為加值選項</li>
@@ -379,44 +493,42 @@ footer { background:#111214; padding:52px 64px 36px; }
       </div>
     </div>
 
-    <!-- PHASE 04 -->
     <div class="services-category reveal">
       <span class="services-category-label">PHASE 04</span>
-      <span class="services-category-title">複製模式，傳承方法論 · Scale & Replicate</span>
+      <span class="services-category-title">把這套方法傳下去 · Scale & Replicate</span>
     </div>
     <div class="services-grid">
       <div class="service-card new-badge reveal">
         <span class="service-num">11</span>
         <div class="service-name">晴域複製計畫</div>
         <span class="service-name-en">LICENSE & TEACH · 系統授權教學</span>
-        <p class="service-desc">晴域的方法論可以被傳承。若您是有意進入數位顧問領域的創業者，我們提供完整的系統授權與實戰教學——從工具配置到客戶溝通框架，讓您從零開始，少走我們走過的彎路。</p>
+        <p class="service-desc">如果你也想做這件事——幫助在地好店被看見——我們願意把這套方法傳給你。從工具配置到客戶溝通框架，我們陪你走到接下第一個客戶為止。</p>
         <ul class="service-points">
           <li>完整顧問流程 SOP 授權使用</li>
           <li>工具包配置與一對一操作指導</li>
-          <li>持續支援，陪伴您接下第一個客戶</li>
+          <li>持續支援，陪伴接下第一個客戶</li>
         </ul>
       </div>
       <div class="service-card service-card-inquiry reveal reveal-d1">
-        <div class="service-card-inquiry-inner">
+        <div class="inq-inner">
           <span class="inq-icon">∞</span>
           <span class="inq-label">有特殊需求？歡迎直接洽詢</span>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- CASE -->
+<!-- ═══ CASE ═══ -->
 <section id="case">
   <div class="case-inner">
     <span class="section-label-dark">WORK · 作品</span>
-    <h2 class="section-title-dark">我們做過的每一個決定<br>都留有痕跡</h2>
+    <h2 class="section-title-dark">我們陪他們走過的路</h2>
     <div class="case-card reveal">
       <div class="case-info">
         <span class="case-num">01</span>
         <h3 class="case-name">夫妻蝦莊</h3>
-        <p class="case-desc">板橋三民路的深夜蝦莊，Google 4.9 星的底氣，終於有了配得上的數位面貌。從官網到 LINE 智能接待，再到 Google 導航全面到位，每一個細節都經過美學校準，讓好店被找到。</p>
+        <p class="case-desc">板橋三民路的深夜蝦莊，Google 4.9 星的底氣，終於有了配得上的數位面貌。從官網到 LINE 智能接待，再到 Google 導航全面到位，讓好店被找到這件事，我們幫他們做到了。</p>
         <div class="case-tags">
           <span class="case-tag">形象官網</span>
           <span class="case-tag">LINE 設定</span>
@@ -429,17 +541,17 @@ footer { background:#111214; padding:52px 64px 36px; }
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ═══ CONTACT ═══ -->
 <section id="contact">
   <div class="contact-inner">
     <div>
-      <span class="section-label">CONTACT · 合作</span>
-      <h2 class="contact-title">準備好讓品牌<br>開始呼吸了嗎</h2>
-      <p class="contact-desc">告訴我們您的品牌故事，我們會在 24 小時內回覆，提供最適合的數位校準方案。沒有制式報價，只有為您量身規劃的解決方案。</p>
+      <span class="section-label-light">CONTACT · 開始合作</span>
+      <h2 class="contact-title">你的店，<br>值得被更多人找到。</h2>
+      <p class="contact-sub">告訴我們你的品牌故事，不用準備什麼，就聊聊你現在的狀況和困擾。我們會在 24 小時內回覆，幫你想想從哪裡開始最有效。</p>
     </div>
     <div class="contact-actions">
-      <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="contact-btn accent">
-        <span>💬 LINE 聯繫品牌管家</span>
+      <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="contact-btn primary">
+        <span>💬 LINE 免費聊聊</span>
         <span class="contact-arrow">→</span>
       </a>
       <a href="https://www.instagram.com/sereoqingyu" target="_blank" class="contact-btn">
@@ -447,29 +559,28 @@ footer { background:#111214; padding:52px 64px 36px; }
         <span class="contact-arrow">→</span>
       </a>
       <a href="#services" class="contact-btn">
-        <span>查看服務項目與報價</span>
+        <span>查看完整服務項目</span>
         <span class="contact-arrow">→</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
         <div class="footer-logo-s">Sereo</div>
-        <div class="footer-tagline">晴域 · 數位美學顧問</div>
+        <div class="footer-tagline">晴域 · 讓好店被找到</div>
       </div>
       <div class="footer-links">
-        <a href="#insight">觀點</a>
+        <a href="#why">關於晴域</a>
         <a href="#services">服務</a>
         <a href="#case">作品</a>
         <a href="#contact">合作</a>
       </div>
     </div>
-    <div class="footer-copy">© 2026 晴域 Sereo · 以美學校準戰略，讓品牌在數位世界具備呼吸感</div>
+    <div class="footer-copy">© 2026 晴域 Sereo · 你的店值得被更多人找到</div>
   </div>
 </footer>
 
