@@ -147,8 +147,10 @@ h1.hero-title em{font-style:italic;color:rgba(255,255,255,0.5);}
 .case-tag{font-size:0.44rem;letter-spacing:3px;padding:6px 14px;border:0.5px solid var(--line);color:var(--ink2);font-weight:300;}
 .case-link{font-size:0.56rem;letter-spacing:4px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;font-weight:300;background:var(--ink);color:var(--white);padding:14px 28px;transition:all 0.3s;}
 .case-link:hover{background:#333;gap:16px;}
-.case-visual{background:var(--bg2);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:10rem;color:rgba(0,0,0,0.04);font-style:italic;min-height:440px;position:relative;}
-.case-visual-label{position:absolute;bottom:28px;right:28px;font-size:0.44rem;letter-spacing:5px;color:var(--ink3);font-weight:300;}
+.case-visual{background:var(--bg2);display:grid;grid-template-columns:1fr 1fr;min-height:440px;position:relative;overflow:hidden;}
+.case-visual img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;}
+.case-visual img:hover{transform:scale(1.04);}
+.case-visual-label{position:absolute;bottom:16px;right:16px;font-size:0.44rem;letter-spacing:5px;color:#fff;font-weight:300;background:rgba(0,0,0,0.5);padding:4px 10px;}
 
 /* CONTACT */
 #contact{padding:180px 72px;background:var(--ink);}
@@ -571,7 +573,11 @@ footer{background:#080808;padding:56px 72px 40px;}
         </div>
         <a href="https://sereo-design.github.io/fuqi-shrimp" target="_blank" class="case-link">查看網站 →</a>
       </div>
-      <div class="case-visual">蝦<span class="case-visual-label">夫妻蝦莊 · 板橋</span></div>
+      <div class="case-visual">
+        <img src="fuqi-preview-1.jpg" alt="夫妻蝦莊官網首頁截圖">
+        <img src="fuqi-preview-2.jpg" alt="夫妻蝦莊菜色實拍截圖">
+        <span class="case-visual-label">夫妻蝦莊 · 板橋</span>
+      </div>
     </div>
   </div>
 </section>
