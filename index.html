@@ -4,193 +4,181 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>晴域 Sereo｜讓好店被找到</title>
-<meta name="description" content="你的店值得被更多人找到。晴域用 AI 工具幫中小店家建立數位存在——官網、社群、導流、系統，快速上線，看得到結果。">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400&family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap" rel="stylesheet">
+<meta name="description" content="晴域 Sereo · 為好店打造數位門面。形象官網、品牌與數位製作。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F8F8F6;
-  --bg2:#F0F0EE;
-  --ink:#0D0D0D;
-  --ink2:#4A4A4A;
-  --ink3:#9A9A9A;
-  --white:#FFFFFF;
-  --line:rgba(0,0,0,0.08);
-  --line2:rgba(0,0,0,0.04);
+  --bg:#EEE9DD;
+  --bg2:#E5DFD0;
+  --bg3:#F4F0E5;
+  --ink:#2B2824;
+  --ink2:#56524A;
+  --ink3:#8F897E;
+  --dark:#1F1D1A;
+  --dark2:#2A2722;
+  --gold:#8C6B3A;
+  --gold2:#B08A4E;
+  --line:rgba(43,40,36,0.12);
+  --line2:rgba(43,40,36,0.06);
+  --line-dark:rgba(255,250,240,0.10);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--ink);font-family:'Noto Serif TC',serif;overflow-x:hidden;cursor:none;font-weight:400;}
-.cursor{width:5px;height:5px;background:var(--ink);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
-.cursor-ring{width:36px;height:36px;border:0.5px solid rgba(13,13,13,0.2);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left 0.08s linear,top 0.08s linear;}
+.cursor{width:6px;height:6px;background:var(--ink);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+.cursor-ring{width:40px;height:40px;border:0.5px solid rgba(43,40,36,0.25);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left 0.08s linear,top 0.08s linear;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:24px 72px;display:flex;justify-content:space-between;align-items:center;background:rgba(248,248,246,0.95);backdrop-filter:blur(20px);border-bottom:0.5px solid var(--line2);}
-.nav-logo{text-decoration:none;display:flex;align-items:baseline;gap:12px;}
-.nav-logo-en{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;font-style:italic;color:var(--ink);letter-spacing:3px;}
-.nav-logo-zh{font-size:0.4rem;letter-spacing:8px;color:var(--ink3);font-weight:400;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:22px 72px;display:flex;justify-content:space-between;align-items:center;background:rgba(238,233,221,0.92);backdrop-filter:blur(20px);border-bottom:0.5px solid var(--line2);}
+.nav-logo{text-decoration:none;display:flex;align-items:baseline;gap:14px;}
+.nav-logo-en{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;font-style:italic;color:var(--ink);letter-spacing:2px;}
+.nav-logo-zh{font-size:0.7rem;letter-spacing:6px;color:var(--ink3);font-weight:400;}
 .nav-links{display:flex;gap:48px;list-style:none;}
-.nav-links a{color:var(--ink3);text-decoration:none;font-size:0.58rem;letter-spacing:4px;font-weight:400;transition:color 0.3s;}
-.nav-links a:hover{color:var(--ink);}
-.nav-cta{font-size:0.58rem;letter-spacing:3px;color:var(--white);background:var(--ink);padding:11px 26px;text-decoration:none;transition:background 0.3s;font-weight:400;}
-.nav-cta:hover{background:#333;}
+.nav-links a{color:var(--ink2);text-decoration:none;font-size:0.82rem;letter-spacing:3px;font-weight:400;transition:color 0.3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{font-size:0.8rem;letter-spacing:3px;color:var(--bg);background:var(--ink);padding:12px 28px;text-decoration:none;transition:background 0.3s;font-weight:400;}
+.nav-cta:hover{background:var(--gold);}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
-.nav-toggle span{width:22px;height:0.5px;background:var(--ink);display:block;}
+.nav-toggle span{width:24px;height:0.5px;background:var(--ink);display:block;}
 
-/* HERO — 全版文字衝擊 */
-#hero{min-height:100vh;padding:0 72px;display:flex;flex-direction:column;justify-content:center;background:var(--ink);position:relative;overflow:hidden;}
-.hero-bg-text{position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:32vw;font-weight:400;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;user-select:none;font-style:italic;white-space:nowrap;}
-.hero-content{position:relative;z-index:1;max-width:900px;}
-.hero-eyebrow{font-size:0.48rem;letter-spacing:6px;color:rgba(255,255,255,0.3);font-weight:400;margin-bottom:56px;opacity:0;animation:fadeIn 1s 0.2s ease both;}
-h1.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(4.5rem,9vw,10rem);font-weight:400;line-height:0.95;color:#fff;letter-spacing:-0.03em;opacity:0;animation:fadeUp 1.2s 0.4s ease both;}
-h1.hero-title em{font-style:italic;color:rgba(255,255,255,0.5);}
-.hero-divider{width:48px;height:0.5px;background:rgba(255,255,255,0.2);margin:52px 0;opacity:0;animation:fadeIn 1s 0.9s ease both;}
-.hero-sub{font-size:0.85rem;line-height:2.5;color:rgba(255,255,255,0.75);font-weight:400;letter-spacing:0.05em;max-width:500px;opacity:0;animation:fadeUp 1s 1s ease both;}
-.hero-ctas{display:flex;align-items:center;gap:40px;margin-top:64px;opacity:0;animation:fadeUp 1s 1.2s ease both;}
-.btn-white{font-size:0.58rem;letter-spacing:4px;color:var(--ink);background:#fff;padding:16px 40px;text-decoration:none;transition:all 0.3s;font-weight:400;display:inline-block;}
-.btn-white:hover{background:rgba(255,255,255,0.85);}
-.btn-outline-white{font-size:0.58rem;letter-spacing:4px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s;font-weight:400;}
-.btn-outline-white:hover{color:#fff;}
-.hero-scroll{position:absolute;bottom:48px;left:72px;display:flex;align-items:center;gap:16px;opacity:0;animation:fadeIn 1s 1.8s ease both;}
-.hero-scroll-line{width:40px;height:0.5px;background:rgba(255,255,255,0.2);}
-.hero-scroll-text{font-size:0.4rem;letter-spacing:5px;color:rgba(255,255,255,0.25);font-weight:400;}
+#hero{min-height:100vh;padding:0 72px;display:flex;flex-direction:column;justify-content:center;background:var(--bg);position:relative;overflow:hidden;}
+.hero-bg-text{position:absolute;right:-60px;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:36vw;font-weight:300;color:rgba(43,40,36,0.04);line-height:1;pointer-events:none;user-select:none;font-style:italic;white-space:nowrap;}
+.hero-content{position:relative;z-index:1;max-width:1000px;}
+.hero-eyebrow{font-size:0.72rem;letter-spacing:5px;color:var(--ink3);font-weight:400;margin-bottom:56px;opacity:0;animation:fadeIn 1s 0.2s ease both;}
+h1.hero-title{font-family:'Noto Serif TC',serif;font-size:clamp(3.5rem,8vw,8rem);font-weight:300;line-height:1.1;color:var(--ink);letter-spacing:0.02em;opacity:0;animation:fadeUp 1.2s 0.4s ease both;}
+h1.hero-title .comma{color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:400;}
+.hero-divider{width:60px;height:0.5px;background:var(--gold);margin:56px 0;opacity:0;animation:fadeIn 1s 0.9s ease both;}
+.hero-sub{font-size:1rem;line-height:2.2;color:var(--ink2);font-weight:400;letter-spacing:0.06em;opacity:0;animation:fadeUp 1s 1s ease both;}
+.hero-sub-en{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold);font-style:italic;font-weight:400;letter-spacing:0.04em;margin-right:16px;}
+.hero-ctas{display:flex;align-items:center;gap:44px;margin-top:72px;opacity:0;animation:fadeUp 1s 1.2s ease both;}
+.btn-dark{font-size:0.82rem;letter-spacing:3px;color:var(--bg);background:var(--ink);padding:18px 44px;text-decoration:none;transition:all 0.3s;font-weight:400;display:inline-block;}
+.btn-dark:hover{background:var(--gold);}
+.btn-outline-dark{font-size:0.82rem;letter-spacing:3px;color:var(--ink2);text-decoration:none;transition:color 0.3s;font-weight:400;border-bottom:0.5px solid var(--ink3);padding-bottom:6px;}
+.btn-outline-dark:hover{color:var(--gold);border-bottom-color:var(--gold);}
+.hero-scroll{position:absolute;bottom:56px;left:72px;display:flex;align-items:center;gap:18px;opacity:0;animation:fadeIn 1s 1.8s ease both;}
+.hero-scroll-line{width:50px;height:0.5px;background:var(--ink3);}
+.hero-scroll-text{font-size:0.65rem;letter-spacing:5px;color:var(--ink3);font-weight:400;}
 
-/* PAIN STRIP */
 #pain{display:grid;grid-template-columns:repeat(4,1fr);background:var(--bg2);}
-.pain-item{padding:48px 44px;border-right:0.5px solid var(--line);transition:background 0.3s;}
+.pain-item{padding:64px 44px;border-right:0.5px solid var(--line);transition:background 0.3s;}
 .pain-item:last-child{border-right:none;}
-.pain-item:hover{background:var(--white);}
-.pain-n{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--ink3);font-style:italic;display:block;margin-bottom:20px;}
-.pain-t{font-size:0.75rem;line-height:2.2;color:var(--ink);font-weight:400;letter-spacing:0.03em;}
-.pain-t em{color:var(--ink);font-style:normal;font-weight:400;}
+.pain-item:hover{background:var(--bg3);}
+.pain-n{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--gold);font-style:italic;display:block;margin-bottom:24px;}
+.pain-t{font-size:0.92rem;line-height:2;color:var(--ink);font-weight:400;letter-spacing:0.04em;}
+.pain-t em{color:var(--ink);font-style:normal;font-weight:500;}
 
-/* WHY */
-#why{padding:180px 72px;background:var(--white);}
+#why{padding:160px 72px;background:var(--bg3);}
 .why-inner{max-width:1200px;margin:0 auto;}
-.sec-eye{font-size:0.44rem;letter-spacing:6px;color:var(--ink3);font-weight:400;margin-bottom:28px;display:block;}
-.why-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,6rem);font-weight:400;color:var(--ink);line-height:0.95;letter-spacing:-0.02em;margin-bottom:100px;}
-.why-title em{font-style:italic;color:var(--ink3);}
+.sec-eye{font-size:0.72rem;letter-spacing:5px;color:var(--gold);font-weight:400;margin-bottom:32px;display:block;}
+.why-title{font-family:'Noto Serif TC',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;color:var(--ink);line-height:1.2;letter-spacing:0.02em;margin-bottom:100px;}
+.why-title em{font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:400;}
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:var(--line);}
-.why-card{background:var(--white);padding:56px 52px;transition:background 0.3s;border-bottom:0.5px solid var(--line);}
+.why-card{background:var(--bg3);padding:64px 52px;transition:background 0.3s;border-bottom:0.5px solid var(--line);}
 .why-card:hover{background:var(--bg);}
-.why-card-n{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:400;color:rgba(0,0,0,0.05);line-height:1;font-style:italic;display:block;margin-bottom:24px;}
-.why-card h3{font-size:1rem;font-weight:400;color:var(--ink);margin-bottom:16px;letter-spacing:0.05em;}
-.why-card p{font-size:0.7rem;line-height:2.3;color:var(--ink);font-weight:400;letter-spacing:0.04em;}
+.why-card-n{font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:300;color:rgba(140,107,58,0.15);line-height:1;font-style:italic;display:block;margin-bottom:28px;}
+.why-card h3{font-size:1.3rem;font-weight:500;color:var(--ink);margin-bottom:20px;letter-spacing:0.06em;}
+.why-card p{font-size:0.92rem;line-height:2.1;color:var(--ink2);font-weight:400;letter-spacing:0.05em;}
 
-/* PRICING — 重點區塊 */
-#pricing{padding:180px 72px;background:var(--ink);}
+#pricing{padding:160px 72px;background:var(--dark);}
 .pricing-inner{max-width:1200px;margin:0 auto;}
-.pricing-eye{font-size:0.44rem;letter-spacing:6px;color:rgba(255,255,255,0.25);font-weight:400;margin-bottom:28px;display:block;}
-.pricing-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,6rem);font-weight:400;color:#fff;line-height:0.95;letter-spacing:-0.02em;margin-bottom:16px;}
-.pricing-title em{font-style:italic;color:rgba(255,255,255,0.65);}
-.pricing-sub{font-size:0.72rem;line-height:2.3;color:rgba(255,255,255,0.65);font-weight:400;letter-spacing:0.05em;margin-bottom:80px;max-width:480px;}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);margin-bottom:1px;}
-.pricing-card{background:var(--ink);padding:56px 44px;transition:background 0.4s;position:relative;}
-.pricing-card:hover{background:#181818;}
-.pricing-card.featured{background:#161616;border-top:1px solid rgba(255,255,255,0.2);}
-.pricing-card.featured::before{content:'最受歡迎';position:absolute;top:-1px;left:0;right:0;text-align:center;font-size:0.4rem;letter-spacing:4px;color:rgba(255,255,255,0.4);padding:8px;border-top:1px solid rgba(255,255,255,0.2);}
-.plan-name{font-size:0.52rem;letter-spacing:5px;color:rgba(255,255,255,0.3);font-weight:400;display:block;margin-bottom:20px;}
-.plan-price{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:400;color:#fff;line-height:1;display:block;margin-bottom:8px;}
-.plan-price-unit{font-size:0.55rem;color:rgba(255,255,255,0.3);font-weight:400;letter-spacing:2px;}
-.plan-divider{width:100%;height:0.5px;background:rgba(255,255,255,0.08);margin:28px 0;}
-.plan-desc{font-size:0.68rem;line-height:2.1;color:rgba(255,255,255,0.4);font-weight:400;letter-spacing:0.03em;margin-bottom:28px;}
-.plan-pts{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:40px;}
-.plan-pts li{font-size:0.62rem;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:12px;font-weight:400;letter-spacing:0.03em;}
-.plan-pts li::before{content:'';width:16px;height:0.5px;flex-shrink:0;background:rgba(255,255,255,0.2);}
-.plan-cta{display:block;text-align:center;font-size:0.55rem;letter-spacing:4px;color:rgba(255,255,255,0.5);border:0.5px solid rgba(255,255,255,0.15);padding:14px;text-decoration:none;transition:all 0.3s;font-weight:400;}
-.plan-cta:hover{border-color:rgba(255,255,255,0.4);color:#fff;}
-.pricing-card.featured .plan-cta{border-color:rgba(255,255,255,0.4);color:#fff;}
-.pricing-card.featured .plan-cta:hover{background:rgba(255,255,255,0.08);}
-.pricing-monthly{background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.06);padding:44px;display:flex;align-items:center;justify-content:space-between;}
-.monthly-left{}
-.monthly-label{font-size:0.44rem;letter-spacing:5px;color:rgba(255,255,255,0.25);display:block;margin-bottom:12px;}
-.monthly-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:#fff;}
-.monthly-desc{font-size:0.65rem;color:rgba(255,255,255,0.65);font-weight:400;letter-spacing:0.04em;margin-top:8px;max-width:400px;line-height:2;}
-.monthly-price{text-align:right;flex-shrink:0;margin-left:48px;}
-.monthly-price .plan-price{font-size:3rem;}
-.monthly-price-note{font-size:0.5rem;color:rgba(255,255,255,0.25);letter-spacing:2px;display:block;margin-top:4px;}
+.pricing-eye{font-size:0.72rem;letter-spacing:5px;color:var(--gold2);font-weight:400;margin-bottom:32px;display:block;}
+.pricing-title{font-family:'Noto Serif TC',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;color:#EFE8D7;line-height:1.2;letter-spacing:0.02em;margin-bottom:24px;}
+.pricing-title em{font-style:italic;color:var(--gold2);font-family:'Cormorant Garamond',serif;font-weight:400;}
+.pricing-sub{font-size:0.95rem;line-height:2.1;color:rgba(239,232,215,0.65);font-weight:400;letter-spacing:0.05em;margin-bottom:80px;max-width:600px;}
 
-/* SERVICES */
-#services{padding:180px 72px;background:var(--bg);}
+.pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-dark);margin-bottom:1px;}
+.pricing-card{background:var(--dark);padding:64px 52px;transition:background 0.4s;}
+.pricing-card:hover{background:var(--dark2);}
+.plan-type{font-size:0.78rem;letter-spacing:5px;color:var(--gold2);font-weight:400;display:block;margin-bottom:28px;}
+.plan-name{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#EFE8D7;line-height:1;display:block;margin-bottom:10px;}
+.plan-name-zh{font-size:1.1rem;color:rgba(239,232,215,0.6);font-weight:400;letter-spacing:0.08em;margin-bottom:40px;display:block;}
+.plan-divider{width:100%;height:0.5px;background:var(--line-dark);margin:32px 0;}
+.plan-section-title{font-size:0.72rem;letter-spacing:4px;color:var(--gold2);font-weight:400;margin-bottom:20px;display:block;}
+.plan-pts{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:36px;}
+.plan-pts li{font-size:0.88rem;color:rgba(239,232,215,0.75);display:flex;align-items:flex-start;gap:14px;font-weight:400;letter-spacing:0.04em;line-height:1.8;}
+.plan-pts li::before{content:'';width:16px;height:0.5px;flex-shrink:0;background:var(--gold);margin-top:12px;}
+.plan-cta{display:block;text-align:center;font-size:0.78rem;letter-spacing:4px;color:#EFE8D7;border:0.5px solid rgba(239,232,215,0.25);padding:16px;text-decoration:none;transition:all 0.3s;font-weight:400;margin-top:20px;}
+.plan-cta:hover{border-color:var(--gold2);color:var(--gold2);}
+
+.maintain-block{background:rgba(239,232,215,0.03);border:0.5px solid var(--line-dark);padding:60px 52px;margin-top:48px;}
+.maintain-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:48px;}
+.maintain-label{font-size:0.72rem;letter-spacing:5px;color:var(--gold2);display:block;margin-bottom:16px;}
+.maintain-title{font-family:'Noto Serif TC',serif;font-size:1.8rem;font-weight:300;color:#EFE8D7;line-height:1.3;letter-spacing:0.04em;}
+.maintain-title em{font-style:italic;color:var(--gold2);font-family:'Cormorant Garamond',serif;font-weight:400;}
+.maintain-sub{font-size:0.88rem;color:rgba(239,232,215,0.65);font-weight:400;letter-spacing:0.04em;line-height:2;max-width:380px;}
+.maintain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);}
+.maintain-card{background:var(--dark2);padding:40px 36px;}
+.maintain-card-name{font-size:0.72rem;letter-spacing:4px;color:var(--gold2);display:block;margin-bottom:20px;}
+.maintain-card-title{font-family:'Noto Serif TC',serif;font-size:1.3rem;color:#EFE8D7;font-weight:400;margin-bottom:24px;line-height:1.3;letter-spacing:0.04em;}
+.maintain-card p{font-size:0.85rem;color:rgba(239,232,215,0.65);line-height:1.9;font-weight:400;letter-spacing:0.04em;}
+.pricing-note{margin-top:48px;padding-top:36px;border-top:0.5px solid var(--line-dark);font-size:0.82rem;color:rgba(239,232,215,0.5);letter-spacing:0.06em;line-height:2;text-align:center;}
+.pricing-note em{color:var(--gold2);font-style:italic;font-family:'Cormorant Garamond',serif;}
+
+#services{padding:160px 72px;background:var(--bg);}
 .services-inner{max-width:1200px;margin:0 auto;}
-.svc-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,6rem);font-weight:400;color:var(--ink);line-height:0.95;letter-spacing:-0.02em;margin-bottom:100px;}
-.svc-title em{font-style:italic;color:var(--ink3);}
-.phase{margin-bottom:64px;}
-.phase-head{display:flex;align-items:center;gap:24px;padding-bottom:16px;border-bottom:0.5px solid var(--line);margin-bottom:2px;}
-.phase-num{font-family:'Cormorant Garamond',serif;font-size:0.85rem;font-weight:400;color:var(--ink3);font-style:italic;}
-.phase-name{font-size:0.48rem;letter-spacing:5px;color:var(--ink2);font-weight:400;}
-.phase-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);}
-.svc{background:var(--bg);padding:52px 44px;transition:background 0.4s;position:relative;}
-.svc:hover{background:var(--white);}
-.svc.new::after{content:'NEW';position:absolute;top:20px;right:20px;font-size:0.38rem;letter-spacing:3px;color:var(--ink3);border:0.5px solid var(--ink3);padding:3px 8px;font-weight:400;}
-.svc-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:rgba(0,0,0,0.2);line-height:1;font-style:italic;display:block;margin-bottom:20px;}
-.svc-name{font-size:1.1rem;font-weight:500;color:var(--ink);margin-bottom:6px;letter-spacing:0.02em;}
-.svc-en{font-size:0.48rem;letter-spacing:4px;color:var(--ink2);font-weight:400;display:block;margin-bottom:20px;}
-.svc-desc{font-size:0.75rem;line-height:2.3;color:var(--ink);font-weight:400;letter-spacing:0.04em;margin-bottom:24px;}
-.svc-pts{list-style:none;display:flex;flex-direction:column;gap:10px;border-top:0.5px solid var(--line);padding-top:20px;}
-.svc-pts li{font-size:0.65rem;color:var(--ink);display:flex;align-items:center;gap:12px;font-weight:400;letter-spacing:0.04em;}
-.svc-pts li::before{content:'';width:16px;height:0.5px;flex-shrink:0;background:var(--ink3);}
-.svc-inquiry{background:var(--bg2);display:flex;align-items:center;justify-content:center;min-height:280px;flex-direction:column;gap:14px;}
-.svc-inq-icon{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:400;color:rgba(0,0,0,0.25);font-style:italic;}
-.svc-inq-text{font-size:0.5rem;letter-spacing:4px;color:var(--ink3);font-weight:400;}
+.svc-title{font-family:'Noto Serif TC',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;color:var(--ink);line-height:1.2;letter-spacing:0.02em;margin-bottom:40px;}
+.svc-title em{font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:400;}
+.svc-intro{font-size:0.95rem;line-height:2.1;color:var(--ink2);font-weight:400;letter-spacing:0.05em;margin-bottom:100px;max-width:600px;}
+.addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);}
+.addon{background:var(--bg);padding:64px 44px;transition:background 0.4s;}
+.addon:hover{background:var(--bg3);}
+.addon-n{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(140,107,58,0.25);line-height:1;font-style:italic;display:block;margin-bottom:32px;}
+.addon-name{font-size:1.2rem;font-weight:500;color:var(--ink);margin-bottom:10px;letter-spacing:0.04em;}
+.addon-en{font-size:0.72rem;letter-spacing:4px;color:var(--gold);font-weight:400;display:block;margin-bottom:28px;font-family:'Cormorant Garamond',serif;font-style:italic;}
+.addon-desc{font-size:0.9rem;line-height:2;color:var(--ink2);font-weight:400;letter-spacing:0.04em;}
 
-/* CASE */
-#case{padding:180px 72px;background:var(--white);}
+#case{padding:160px 72px;background:var(--bg3);}
 .case-inner{max-width:1200px;margin:0 auto;}
-.case-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,6rem);font-weight:400;color:var(--ink);line-height:0.95;letter-spacing:-0.02em;margin-bottom:80px;}
-.case-title em{font-style:italic;color:var(--ink3);}
+.case-title{font-family:'Noto Serif TC',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:300;color:var(--ink);line-height:1.2;letter-spacing:0.02em;margin-bottom:80px;}
+.case-title em{font-style:italic;color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:400;}
 .case-card{display:grid;grid-template-columns:1fr 1fr;border:0.5px solid var(--line);}
 .case-info{padding:72px 60px;background:var(--bg);}
-.case-num{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:400;color:rgba(0,0,0,0.04);line-height:1;font-style:italic;display:block;margin-bottom:36px;}
-.case-name{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:400;color:var(--ink);margin-bottom:20px;}
-.case-desc{font-size:0.7rem;line-height:2.4;color:var(--ink2);font-weight:400;margin-bottom:32px;letter-spacing:0.04em;}
-.case-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;}
-.case-tag{font-size:0.44rem;letter-spacing:3px;padding:6px 14px;border:0.5px solid var(--line);color:var(--ink2);font-weight:400;}
-.case-link{font-size:0.56rem;letter-spacing:4px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;font-weight:400;background:var(--ink);color:var(--white);padding:14px 28px;transition:all 0.3s;}
-.case-link:hover{background:#333;gap:16px;}
-.case-visual{background:var(--bg2);display:grid;grid-template-columns:1fr 1fr;min-height:440px;position:relative;overflow:hidden;}
+.case-num{font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:300;color:rgba(140,107,58,0.12);line-height:1;font-style:italic;display:block;margin-bottom:40px;}
+.case-name{font-family:'Noto Serif TC',serif;font-size:2rem;font-weight:400;color:var(--ink);margin-bottom:28px;letter-spacing:0.06em;}
+.case-desc{font-size:0.92rem;line-height:2.1;color:var(--ink2);font-weight:400;margin-bottom:36px;letter-spacing:0.05em;}
+.case-tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px;}
+.case-tag{font-size:0.72rem;letter-spacing:3px;padding:8px 18px;border:0.5px solid var(--gold);color:var(--gold);font-weight:400;}
+.case-link{font-size:0.82rem;letter-spacing:3px;text-decoration:none;display:inline-flex;align-items:center;gap:12px;font-weight:400;background:var(--ink);color:var(--bg);padding:16px 32px;transition:all 0.3s;}
+.case-link:hover{background:var(--gold);gap:18px;}
+.case-visual{background:var(--bg2);display:grid;grid-template-columns:1fr 1fr;min-height:520px;position:relative;overflow:hidden;}
 .case-visual img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;}
 .case-visual img:hover{transform:scale(1.04);}
-.case-visual-label{position:absolute;bottom:16px;right:16px;font-size:0.44rem;letter-spacing:5px;color:#fff;font-weight:400;background:rgba(0,0,0,0.5);padding:4px 10px;}
+.case-visual-label{position:absolute;bottom:18px;right:18px;font-size:0.72rem;letter-spacing:4px;color:#EFE8D7;font-weight:400;background:rgba(31,29,26,0.7);padding:6px 14px;}
 
-/* CONTACT */
-#contact{padding:180px 72px;background:var(--ink);}
-.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:120px;align-items:start;}
-.contact-eye{font-size:0.44rem;letter-spacing:6px;color:rgba(255,255,255,0.2);font-weight:400;margin-bottom:28px;display:block;}
-.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5.5rem);font-weight:400;color:#fff;line-height:0.95;letter-spacing:-0.02em;margin-bottom:28px;}
-.contact-title em{font-style:italic;color:rgba(255,255,255,0.3);}
-.contact-desc{font-size:0.75rem;line-height:2.4;color:rgba(255,255,255,0.65);font-weight:400;letter-spacing:0.05em;}
+#contact{padding:160px 72px;background:var(--dark);}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;}
+.contact-eye{font-size:0.72rem;letter-spacing:5px;color:var(--gold2);font-weight:400;margin-bottom:32px;display:block;}
+.contact-title{font-family:'Noto Serif TC',serif;font-size:clamp(2.5rem,4.5vw,4.5rem);font-weight:300;color:#EFE8D7;line-height:1.2;letter-spacing:0.02em;margin-bottom:36px;}
+.contact-title em{font-style:italic;color:var(--gold2);font-family:'Cormorant Garamond',serif;font-weight:400;}
+.contact-desc{font-size:0.95rem;line-height:2.1;color:rgba(239,232,215,0.7);font-weight:400;letter-spacing:0.05em;}
 .contact-btns{display:flex;flex-direction:column;gap:1px;}
-.contact-btn{display:flex;align-items:center;justify-content:space-between;padding:26px 32px;background:rgba(255,255,255,0.02);border:0.5px solid rgba(255,255,255,0.06);text-decoration:none;color:rgba(255,255,255,0.6);font-size:0.58rem;letter-spacing:4px;font-weight:400;transition:all 0.4s;}
-.contact-btn:hover{background:rgba(255,255,255,0.05);color:#fff;border-color:rgba(255,255,255,0.14);}
-.contact-btn.primary{border-color:rgba(255,255,255,0.18);color:#fff;}
-.c-arrow{opacity:0.2;transition:all 0.4s;}
-.contact-btn:hover .c-arrow{opacity:0.8;transform:translateX(6px);}
+.contact-btn{display:flex;align-items:center;justify-content:space-between;padding:30px 36px;background:rgba(239,232,215,0.03);border:0.5px solid var(--line-dark);text-decoration:none;color:rgba(239,232,215,0.7);font-size:0.82rem;letter-spacing:3px;font-weight:400;transition:all 0.4s;}
+.contact-btn:hover{background:rgba(239,232,215,0.06);color:#EFE8D7;border-color:var(--gold2);}
+.contact-btn.primary{border-color:rgba(239,232,215,0.25);color:#EFE8D7;}
+.c-arrow{opacity:0.4;transition:all 0.4s;color:var(--gold2);}
+.contact-btn:hover .c-arrow{opacity:1;transform:translateX(6px);}
 
-/* FOOTER */
-footer{background:#080808;padding:56px 72px 40px;}
+footer{background:#141210;padding:56px 72px 40px;}
 .footer-inner{max-width:1200px;margin:0 auto;}
-.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:36px;border-bottom:0.5px solid rgba(255,255,255,0.04);margin-bottom:28px;flex-wrap:wrap;gap:20px;}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;font-style:italic;color:rgba(255,255,255,0.3);}
-.footer-tag{font-size:0.4rem;letter-spacing:5px;color:rgba(255,255,255,0.12);font-weight:400;margin-top:4px;}
-.footer-links{display:flex;gap:32px;}
-.footer-links a{color:rgba(255,255,255,0.15);text-decoration:none;font-size:0.5rem;letter-spacing:3px;transition:color 0.3s;font-weight:400;}
-.footer-links a:hover{color:rgba(255,255,255,0.75);}
-.footer-copy{font-size:0.42rem;letter-spacing:3px;color:rgba(255,255,255,0.08);font-weight:400;}
+.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:36px;border-bottom:0.5px solid rgba(239,232,215,0.05);margin-bottom:32px;flex-wrap:wrap;gap:24px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;font-style:italic;color:rgba(239,232,215,0.4);}
+.footer-tag{font-size:0.68rem;letter-spacing:4px;color:rgba(239,232,215,0.25);font-weight:400;margin-top:6px;}
+.footer-links{display:flex;gap:36px;}
+.footer-links a{color:rgba(239,232,215,0.3);text-decoration:none;font-size:0.78rem;letter-spacing:3px;transition:color 0.3s;font-weight:400;}
+.footer-links a:hover{color:var(--gold2);}
+.footer-copy{font-size:0.68rem;letter-spacing:3px;color:rgba(239,232,215,0.2);font-weight:400;}
 
-/* MOBILE */
-.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--ink);padding:120px 40px 60px;z-index:190;flex-direction:column;gap:0;}
+.mobile-nav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--dark);padding:120px 40px 60px;z-index:190;flex-direction:column;gap:0;}
 .mobile-nav.open{display:flex;}
-.mobile-nav a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:1.4rem;padding:20px 0;border-bottom:0.5px solid rgba(255,255,255,0.05);font-weight:400;font-family:'Cormorant Garamond',serif;font-style:italic;transition:color 0.3s;}
-.mobile-nav a:hover{color:#fff;}
-.mobile-nav a:last-child{border:none;margin-top:32px;background:#fff;color:var(--ink);padding:16px 24px;text-align:center;font-size:0.58rem;letter-spacing:4px;font-family:'Noto Serif TC',serif;font-style:normal;}
+.mobile-nav a{color:rgba(239,232,215,0.5);text-decoration:none;font-size:1.6rem;padding:24px 0;border-bottom:0.5px solid rgba(239,232,215,0.06);font-weight:300;font-family:'Noto Serif TC',serif;transition:color 0.3s;letter-spacing:0.08em;}
+.mobile-nav a:hover{color:var(--gold2);}
+.mobile-nav a:last-child{border:none;margin-top:36px;background:var(--gold);color:var(--dark);padding:18px 24px;text-align:center;font-size:0.9rem;letter-spacing:4px;}
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(0.22,1,0.36,1),transform 1s cubic-bezier(0.22,1,0.36,1);}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1.1s cubic-bezier(0.22,1,0.36,1),transform 1.1s cubic-bezier(0.22,1,0.36,1);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-d1{transition-delay:0.12s;}
 .reveal-d2{transition-delay:0.24s;}
 .reveal-d3{transition-delay:0.36s;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(32px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
 @media(max-width:960px){
@@ -201,14 +189,15 @@ footer{background:#080808;padding:56px 72px 40px;}
   .hero-bg-text{display:none;}
   .hero-scroll{left:24px;}
   #pain{grid-template-columns:1fr 1fr;}
-  .pain-item{padding:32px 24px;}
+  .pain-item{padding:44px 28px;}
   #why,#pricing,#services,#case,#contact{padding:100px 24px;}
-  .why-grid,.phase-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
   .pricing-grid{grid-template-columns:1fr;}
-  .pricing-monthly{flex-direction:column;gap:28px;}
-  .monthly-price{text-align:left;margin-left:0;}
+  .maintain-grid{grid-template-columns:1fr;}
+  .addon-grid{grid-template-columns:1fr;}
+  .maintain-block{padding:40px 28px;}
   .case-card{grid-template-columns:1fr;}
-  .case-visual{min-height:200px;}
+  .case-visual{min-height:280px;}
   .contact-inner{grid-template-columns:1fr;gap:64px;}
   footer{padding:48px 24px 32px;}
   body{cursor:auto;}
@@ -227,34 +216,33 @@ footer{background:#080808;padding:56px 72px 40px;}
   </a>
   <ul class="nav-links">
     <li><a href="#why">關於</a></li>
-    <li><a href="#pricing">方案</a></li>
-    <li><a href="#services">服務</a></li>
+    <li><a href="#pricing">服務</a></li>
+    <li><a href="#services">加值</a></li>
     <li><a href="#case">作品</a></li>
     <li><a href="#contact">合作</a></li>
   </ul>
-  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="nav-cta">免費諮詢</a>
+  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="nav-cta">洽詢</a>
   <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-nav" id="mobileNav">
   <a href="#why" onclick="closeNav()">關於</a>
-  <a href="#pricing" onclick="closeNav()">方案</a>
-  <a href="#services" onclick="closeNav()">服務</a>
+  <a href="#pricing" onclick="closeNav()">服務</a>
+  <a href="#services" onclick="closeNav()">加值</a>
   <a href="#case" onclick="closeNav()">作品</a>
-  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" onclick="closeNav()">免費諮詢</a>
+  <a href="https://line.me/ti/p/~@625ummgh" target="_blank" onclick="closeNav()">洽詢</a>
 </div>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg-text">Sereo</div>
   <div class="hero-content">
-    <div class="hero-eyebrow">SEREO · 晴域 · 數位品牌顧問 · 2026</div>
-    <h1 class="hero-title">你的店，<br>值得被<em>更多人</em><br>找到。</h1>
+    <div class="hero-eyebrow">SEREO · 晴域 · 品牌與數位製作 · 2026</div>
+    <h1 class="hero-title">讓好店<span class="comma">,</span><br>被找到<span class="comma">。</span></h1>
     <div class="hero-divider"></div>
-    <p class="hero-sub">你把心力放在做好產品、服務好客人。網路上沒人替你說這件事——晴域用 AI 工具幫你做到，快速上線，看得到結果。</p>
+    <p class="hero-sub"><span class="hero-sub-en">Sereo ——</span>晴域為好店打造數位門面。</p>
     <div class="hero-ctas">
-      <a href="#pricing" class="btn-white">查看方案與費用</a>
-      <a href="#case" class="btn-outline-white">看作品 →</a>
+      <a href="#pricing" class="btn-dark">了解服務</a>
+      <a href="#case" class="btn-outline-dark">看作品 →</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -263,300 +251,175 @@ footer{background:#080808;padding:56px 72px 40px;}
   </div>
 </section>
 
-<!-- PAIN -->
 <div id="pain">
   <div class="pain-item reveal">
     <span class="pain-n">01</span>
-    <p class="pain-t">客人說，<em>「找了很久才找到你」</em>——但你明明就在那裡。</p>
+    <p class="pain-t">客人說 <em>「找了很久才找到你」</em>——但你明明就在那裡。</p>
   </div>
   <div class="pain-item reveal reveal-d1">
     <span class="pain-n">02</span>
-    <p class="pain-t">有官網有 IG，但感覺<em>都在浪費時間</em>，沒帶來真正的客人。</p>
+    <p class="pain-t">有官網有 IG,但感覺 <em>都在浪費時間</em>。</p>
   </div>
   <div class="pain-item reveal reveal-d2">
     <span class="pain-n">03</span>
-    <p class="pain-t">想做數位，但<em>不知道從哪裡開始</em>，也不確定找誰值得信任。</p>
+    <p class="pain-t">想做數位,<em>不知道從哪開始</em>。</p>
   </div>
   <div class="pain-item reveal reveal-d3">
     <span class="pain-n">04</span>
-    <p class="pain-t">廠商<em>做完就不見了</em>——你需要的是有人陪著走，不是丟個網站給你。</p>
+    <p class="pain-t">廠商 <em>做完就不見了</em>。</p>
   </div>
 </div>
 
-<!-- WHY -->
 <section id="why">
   <div class="why-inner">
-    <span class="sec-eye reveal">WHY SEREO · 為什麼是晴域</span>
-    <h2 class="why-title reveal">我們用 AI，<br>幫你做到<em>以前</em><br>要花大錢的事。</h2>
+    <span class="sec-eye reveal">WHY SEREO</span>
+    <h2 class="why-title reveal">把網站當作品做,<br><em>不是商品賣。</em></h2>
     <div class="why-grid">
       <div class="why-card reveal">
-        <span class="why-card-n">一</span>
-        <h3>結果才是產品</h3>
-        <p>我們不賣「設定 Google 導航」——我們賣的是「上線第一週，多了新客人找到你」。工具是過程，結果才是你付錢買的東西。</p>
+        <span class="why-card-n">i</span>
+        <h3>設計是態度</h3>
+        <p>你怎麼對待品牌,客人就怎麼看待你的店。</p>
       </div>
       <div class="why-card reveal reveal-d1">
-        <span class="why-card-n">二</span>
-        <h3>做完不是終點</h3>
-        <p>很多廠商交付之後就消失了。晴域提供月費陪跑制——數位品牌需要持續照顧，我們一直在，你安心做生意。</p>
+        <span class="why-card-n">ii</span>
+        <h3>交付透明</h3>
+        <p>做什麼、做多久,事前寫清楚,過程看得到。</p>
       </div>
       <div class="why-card reveal">
-        <span class="why-card-n">三</span>
-        <h3>AI 工具，小預算做大事</h3>
-        <p>晴域用 AI 工具壓低製作成本，把省下的空間給你更好的定價。以前要花十萬的事，現在不用。</p>
+        <span class="why-card-n">iii</span>
+        <h3>做完不是終點</h3>
+        <p>上線後持續陪跑,品牌長期在線。</p>
       </div>
       <div class="why-card reveal reveal-d1">
-        <span class="why-card-n">四</span>
+        <span class="why-card-n">iv</span>
         <h3>你的時間比這個貴</h3>
-        <p>數位雜務全部交給我們。訂位、回覆、推播、更新——系統代勞，你去做只有你能做的事：款待客人。</p>
+        <p>數位雜務系統代勞,你專心款待客人。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section id="pricing">
   <div class="pricing-inner">
-    <span class="pricing-eye reveal">PRICING · 方案與費用</span>
-    <h2 class="pricing-title reveal">選一個方案，<br><em>直接開始。</em></h2>
-    <p class="pricing-sub reveal">沒有隱藏費用、沒有複雜報價流程。選好方案，付款，7 天內上線。</p>
+    <span class="pricing-eye reveal">SERVICES · 服務內容</span>
+    <h2 class="pricing-title reveal">我們只做兩種網站,<br><em>但做到位。</em></h2>
+    <p class="pricing-sub reveal">每一個案子都量身打造,不套模板、不做流水線。費用依專案內容個別評估。</p>
 
     <div class="pricing-grid reveal">
-      <!-- 入門包 -->
       <div class="pricing-card">
-        <span class="plan-name">STARTER · 入門包</span>
-        <span class="plan-price">8,000<span class="plan-price-unit"> NTD</span></span>
-        <div class="plan-divider"></div>
-        <p class="plan-desc">剛起步的店家，先把最基本的做好——讓人找得到你、導航到你、留下第一印象。</p>
+        <span class="plan-type">ONE-PAGE</span>
+        <span class="plan-name">One-Page</span>
+        <span class="plan-name-zh">一頁式形象官網</span>
+
+        <span class="plan-section-title">適合</span>
         <ul class="plan-pts">
-          <li>一頁式形象官網</li>
-          <li>Google Maps 商家校準</li>
-          <li>手機電腦完美顯示</li>
-          <li>7 天內交付上線</li>
+          <li>單店餐廳、獨立品牌</li>
+          <li>單一商品或服務</li>
+          <li>開幕衝流量、快閃活動</li>
         </ul>
-        <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="plan-cta">立即諮詢</a>
+
+        <div class="plan-divider"></div>
+
+        <span class="plan-section-title">交付</span>
+        <ul class="plan-pts">
+          <li>形象首頁與品牌視覺</li>
+          <li>菜單／商品展示區</li>
+          <li>地圖導航與聯絡資訊</li>
+          <li>響應式排版 · SEO 結構</li>
+        </ul>
+
+        <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="plan-cta">聊聊你的需求</a>
       </div>
 
-      <!-- 標準包 -->
-      <div class="pricing-card featured">
-        <span class="plan-name">STANDARD · 標準包</span>
-        <span class="plan-price">18,000<span class="plan-price-unit"> NTD</span></span>
-        <div class="plan-divider"></div>
-        <p class="plan-desc">最完整的數位地基。官網、LINE 接待、地圖導流——三個一次到位，客人找得到、問得到、訂得到。</p>
-        <ul class="plan-pts">
-          <li>多頁形象官網</li>
-          <li>LINE 官方帳號建置</li>
-          <li>智能圖文選單設定</li>
-          <li>Google Maps 全面校準</li>
-          <li>SEO 基礎結構優化</li>
-          <li>7 天內交付上線</li>
-        </ul>
-        <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="plan-cta">立即諮詢</a>
-      </div>
-
-      <!-- 全配包 -->
       <div class="pricing-card">
-        <span class="plan-name">FULL · 全配包</span>
-        <span class="plan-price">28,000<span class="plan-price-unit"> NTD</span></span>
-        <div class="plan-divider"></div>
-        <p class="plan-desc">想要快速建立完整數位存在的品牌。從官網到社群到數據，一次搞定，不留死角。</p>
+        <span class="plan-type">MULTI-PAGE</span>
+        <span class="plan-name">Multi-Page</span>
+        <span class="plan-name-zh">分頁式品牌官網</span>
+
+        <span class="plan-section-title">適合</span>
         <ul class="plan-pts">
-          <li>標準包全部內容</li>
-          <li>社群內容首月規劃</li>
-          <li>自動化訂位系統建置</li>
-          <li>Google Analytics 串接</li>
-          <li>開幕前數位暖場規劃</li>
-          <li>首月數據週報</li>
+          <li>需完整品牌敘事的企業</li>
+          <li>多商品線、多服務項目</li>
+          <li>長期 SEO 與內容佈局</li>
         </ul>
-        <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="plan-cta">立即諮詢</a>
+
+        <div class="plan-divider"></div>
+
+        <span class="plan-section-title">交付</span>
+        <ul class="plan-pts">
+          <li>首頁 + 內頁 3–5 頁</li>
+          <li>品牌故事／商品／聯絡</li>
+          <li>SEO 結構化導覽</li>
+          <li>響應式排版 · 彈性擴充</li>
+        </ul>
+
+        <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="plan-cta">聊聊你的需求</a>
       </div>
     </div>
 
-    <!-- 月費陪跑 -->
-    <div class="pricing-monthly reveal">
-      <div class="monthly-left">
-        <span class="monthly-label">RETAINER · 月費陪跑制</span>
-        <div class="monthly-title">晴域隨身顧問</div>
-        <p class="monthly-desc">做完不是終點。每個月固定費用，晴域幫你持續照顧數位品牌——內容更新、數據追蹤、系統維護、隨時響應。你專心做生意，數位的事交給我們。</p>
+    <div class="maintain-block reveal">
+      <div class="maintain-head">
+        <div>
+          <span class="maintain-label">AFTERCARE · 交付後維護</span>
+          <div class="maintain-title">上線之後,<em>我們不會消失。</em></div>
+        </div>
+        <p class="maintain-sub">交付後 14 天內文字、圖片、聯絡資訊微調不計費。之後依三種模式合作。</p>
       </div>
-      <div class="monthly-price">
-        <span class="plan-price">3,500<span class="plan-price-unit"> NTD</span></span>
-        <span class="monthly-price-note">/ 每月 · 可隨時取消</span>
-        <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="plan-cta" style="margin-top:20px;display:block;min-width:160px;">了解詳情</a>
+
+      <div class="maintain-grid">
+        <div class="maintain-card">
+          <span class="maintain-card-name">A · 單次委託</span>
+          <div class="maintain-card-title">按次計費</div>
+          <p>依修改幅度分三階事前報價。適合很少調整的品牌。</p>
+        </div>
+        <div class="maintain-card">
+          <span class="maintain-card-name">B · 季度維護</span>
+          <div class="maintain-card-title">每季固定合作</div>
+          <p>每季固定費用,包含調整額度。適合換菜單、換季節促銷。</p>
+        </div>
+        <div class="maintain-card">
+          <span class="maintain-card-name">C · 年度陪跑</span>
+          <div class="maintain-card-title">長期夥伴關係</div>
+          <p>年度合約,包月調整 + 年度整體優化。</p>
+        </div>
       </div>
+
+      <div class="pricing-note"><em>—</em>  具體費用依實際需求討論後報價 · 歡迎直接洽詢  <em>—</em></div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="services-inner">
-    <span class="sec-eye reveal">SERVICES · 完整服務項目</span>
-    <h2 class="svc-title reveal">從被找到，<br>到留住客人，<br><em>全程陪你走。</em></h2>
+    <span class="sec-eye reveal">ADD-ON · 加值服務</span>
+    <h2 class="svc-title reveal">除了網站,<br><em>我們也幫你接起這些事。</em></h2>
+    <p class="svc-intro reveal">網站不是孤島。把店家既有的社群、地圖、自動化流程串接到官網,讓每個管道都為你工作。</p>
 
-    <div class="phase reveal">
-      <div class="phase-head">
-        <span class="phase-num">Phase 01</span>
-        <span class="phase-name">讓你先被找到 · ESTABLISH PRESENCE</span>
+    <div class="addon-grid">
+      <div class="addon reveal">
+        <span class="addon-n">01</span>
+        <div class="addon-name">Google Maps 校準</div>
+        <span class="addon-en">Location Logic</span>
+        <p class="addon-desc">商家資訊、營業時間、照片、分類校準到位,讓搜尋「附近餐廳」的客人找得到你。</p>
       </div>
-      <div class="phase-grid">
-        <div class="svc">
-          <span class="svc-n">01</span>
-          <div class="svc-name">品牌數位地基建構</div>
-          <span class="svc-en">THE FOUNDATION · 形象官網</span>
-          <p class="svc-desc">你的官網是客人決定要不要上門之前最先看到你的地方。我們為你量身打造，確保每一處細節都在替你說「這家店值得信任」。</p>
-          <ul class="svc-pts">
-            <li>網域建立與 SEO 結構優化</li>
-            <li>響應式排版，手機電腦完美</li>
-            <li>7 天內交付上線</li>
-          </ul>
-        </div>
-        <div class="svc">
-          <span class="svc-n">02</span>
-          <div class="svc-name">地圖流量攻勢包</div>
-          <span class="svc-en">LOCATION LOGIC · 導航優化</span>
-          <p class="svc-desc">客人搜尋「附近餐廳」的當下，你有沒有出現？我們把你的地圖資訊校準到位，讓每一個搜尋都能找到你。</p>
-          <ul class="svc-pts">
-            <li>Google Maps 商家資訊全面校準</li>
-            <li>引流路徑優化</li>
-            <li>Google 評價策略規劃</li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="phase reveal">
-      <div class="phase-head">
-        <span class="phase-num">Phase 02</span>
-        <span class="phase-name">接住每一位客人 · ATTRACT & CAPTURE</span>
+      <div class="addon reveal reveal-d1">
+        <span class="addon-n">02</span>
+        <div class="addon-name">社群帳號整合</div>
+        <span class="addon-en">Social Bridge</span>
+        <p class="addon-desc">IG、FB、LINE 串接到官網動線,客人一鍵跟上社群,每個管道都接得起來。</p>
       </div>
-      <div class="phase-grid">
-        <div class="svc">
-          <span class="svc-n">03</span>
-          <div class="svc-name">品牌隨身管家</div>
-          <span class="svc-en">SEREO BUTLER · LINE 智能接待</span>
-          <p class="svc-desc">客人傳訊息來問，你正在忙——這一條訊息可能就是一張訂單。自動接待系統讓品牌 24 小時在線，不漏接任何人。</p>
-          <ul class="svc-pts">
-            <li>LINE 官方帳號完整建置</li>
-            <li>智能圖文選單與自動回覆</li>
-            <li>全天候品牌在線</li>
-          </ul>
-        </div>
-        <div class="svc new">
-          <span class="svc-n">04</span>
-          <div class="svc-name">品牌內容引擎</div>
-          <span class="svc-en">CONTENT OS · 社群內容策略</span>
-          <p class="svc-desc">有帳號不等於有存在感。我們幫你規劃內容方向、寫腳本、定主題，讓社群開始真正為你引流。</p>
-          <ul class="svc-pts">
-            <li>每月內容行事曆規劃</li>
-            <li>IG／FB 貼文腳本代寫</li>
-            <li>Reels 短影音腳本框架</li>
-          </ul>
-        </div>
-        <div class="svc new">
-          <span class="svc-n">05</span>
-          <div class="svc-name">智能訂位引擎</div>
-          <span class="svc-en">RESERVATION OS · 自動化訂單</span>
-          <p class="svc-desc">訂位、確認、提醒全部自動化。減少爽約、減少漏單、減少重複勞動——你的時間值得更好的用途。</p>
-          <ul class="svc-pts">
-            <li>線上訂位表單與即時確認</li>
-            <li>自動提醒降低爽約率</li>
-            <li>訂單資料結構化</li>
-          </ul>
-        </div>
-        <div class="svc new">
-          <span class="svc-n">06</span>
-          <div class="svc-name">品牌登場儀式</div>
-          <span class="svc-en">LAUNCH SPRINT · 開幕衝流量</span>
-          <p class="svc-desc">開幕只有一次。前後兩週集中打造數位暖場，讓陌生人在開幕當天就知道你的存在。</p>
-          <ul class="svc-pts">
-            <li>開幕前 2 週暖場規劃</li>
-            <li>社群曝光集中衝刺</li>
-            <li>開幕週即時監控調整</li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div class="phase reveal">
-      <div class="phase-head">
-        <span class="phase-num">Phase 03</span>
-        <span class="phase-name">讓客人一來再來 · RETAIN & OPTIMIZE</span>
-      </div>
-      <div class="phase-grid">
-        <div class="svc new">
-          <span class="svc-n">07</span>
-          <div class="svc-name">熟客培育系統</div>
-          <span class="svc-en">LOYALTY ENGINE · 回頭客經營</span>
-          <p class="svc-desc">來過一次的客人是最值錢的資產。建立回訪機制，讓「偶爾來」變成「每週來」。</p>
-          <ul class="svc-pts">
-            <li>LINE 分眾推播策略</li>
-            <li>集點回訪誘因機制</li>
-            <li>節慶關懷自動排程</li>
-          </ul>
-        </div>
-        <div class="svc new">
-          <span class="svc-n">08</span>
-          <div class="svc-name">品牌數位診所</div>
-          <span class="svc-en">WEEKLY PULSE · 數據週報</span>
-          <p class="svc-desc">你的官網有多少人看、哪個時段最多人搜尋你——這些數字在告訴你重要的事。我們每週幫你解讀、給建議。</p>
-          <ul class="svc-pts">
-            <li>每週數據摘要整理</li>
-            <li>AI 輔助分析優化方向</li>
-            <li>長期趨勢追蹤</li>
-          </ul>
-        </div>
-        <div class="svc">
-          <span class="svc-n">09</span>
-          <div class="svc-name">晴域隨身顧問</div>
-          <span class="svc-en">RETAINER · 月費陪跑</span>
-          <p class="svc-desc">你專心做好本業，數位的事交給我們持續照顧——24 小時響應、定期微調、定期健檢。</p>
-          <ul class="svc-pts">
-            <li>24 小時故障排除</li>
-            <li>內容定期微調優化</li>
-            <li>數位品牌定期健檢</li>
-          </ul>
-        </div>
-        <div class="svc new">
-          <span class="svc-n">10</span>
-          <div class="svc-name">多語言品牌延伸</div>
-          <span class="svc-en">MULTILINGUAL · 跨語言服務</span>
-          <p class="svc-desc">中英日韓泰越六語系，讓每一位走進你店裡的客人都感受到同樣的溫度。</p>
-          <ul class="svc-pts">
-            <li>中英雙語標準配備</li>
-            <li>日韓泰越加值選項</li>
-            <li>菜單官網社群均可覆蓋</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="phase reveal">
-      <div class="phase-head">
-        <span class="phase-num">Phase 04</span>
-        <span class="phase-name">把方法傳下去 · SCALE & REPLICATE</span>
-      </div>
-      <div class="phase-grid">
-        <div class="svc new">
-          <span class="svc-n">11</span>
-          <div class="svc-name">晴域複製計畫</div>
-          <span class="svc-en">LICENSE & TEACH · 系統授權</span>
-          <p class="svc-desc">想做跟晴域一樣的事？我們把這套方法傳給你——工具配置、客戶框架、SOP 全部授權，陪你走到接下第一個客戶。</p>
-          <ul class="svc-pts">
-            <li>完整顧問流程 SOP 授權</li>
-            <li>工具包配置一對一指導</li>
-            <li>持續支援直到接案成功</li>
-          </ul>
-        </div>
-        <div class="svc svc-inquiry">
-          <div class="svc-inq-icon">∞</div>
-          <div class="svc-inq-text">有特殊需求？歡迎直接洽詢</div>
-        </div>
+      <div class="addon reveal reveal-d2">
+        <span class="addon-n">03</span>
+        <div class="addon-name">n8n 自動化流程</div>
+        <span class="addon-en">Automation</span>
+        <p class="addon-desc">官網表單送出 → 自動通知、建檔、回覆。每一筆諮詢都接起來。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CASE -->
 <section id="case">
   <div class="case-inner">
     <span class="sec-eye reveal">WORK · 作品</span>
@@ -565,7 +428,7 @@ footer{background:#080808;padding:56px 72px 40px;}
       <div class="case-info">
         <span class="case-num">01</span>
         <h3 class="case-name">夫妻蝦莊</h3>
-        <p class="case-desc">板橋三民路的深夜蝦莊，Google 4.9 星的底氣，終於有了配得上的數位面貌。從官網到 LINE 智能接待，再到 Google 導航全面到位——讓好店被找到這件事，我們幫他們做到了。</p>
+        <p class="case-desc">板橋三民路的深夜蝦莊,Google 4.9 星的底氣,終於有了配得上的數位面貌。形象官網、LINE 接待設定、Google 導航校準——讓好店被找到。</p>
         <div class="case-tags">
           <span class="case-tag">形象官網</span>
           <span class="case-tag">LINE 設定</span>
@@ -582,25 +445,24 @@ footer{background:#080808;padding:56px 72px 40px;}
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
     <div class="reveal">
       <span class="contact-eye">CONTACT · 開始合作</span>
-      <h2 class="contact-title">你的店，<br>值得被<em>更多人</em>找到。</h2>
-      <p class="contact-desc">不用準備什麼，就聊聊你現在的狀況和困擾。24 小時內回覆，幫你想想從哪裡開始最有效。</p>
+      <h2 class="contact-title">你的店,<br>值得被<em>更多人</em>找到。</h2>
+      <p class="contact-desc">聊聊你現在的狀況和困擾,我們依需求評估方向,24 小時內回覆。</p>
     </div>
     <div class="contact-btns reveal reveal-d1">
       <a href="https://line.me/ti/p/~@625ummgh" target="_blank" class="contact-btn primary">
-        <span>LINE 免費聊聊</span>
+        <span>LINE 洽談</span>
         <span class="c-arrow">→</span>
       </a>
       <a href="https://www.instagram.com/sereoqingyu" target="_blank" class="contact-btn">
         <span>Instagram</span>
         <span class="c-arrow">→</span>
       </a>
-      <a href="#pricing" class="contact-btn">
-        <span>查看方案與費用</span>
+      <a href="#case" class="contact-btn">
+        <span>查看作品</span>
         <span class="c-arrow">→</span>
       </a>
     </div>
@@ -612,17 +474,17 @@ footer{background:#080808;padding:56px 72px 40px;}
     <div class="footer-top">
       <div>
         <div class="footer-logo">Sereo</div>
-        <div class="footer-tag">晴域 · 讓好店被找到</div>
+        <div class="footer-tag">晴域 · 品牌與數位製作</div>
       </div>
       <div class="footer-links">
         <a href="#why">關於</a>
-        <a href="#pricing">方案</a>
-        <a href="#services">服務</a>
+        <a href="#pricing">服務</a>
+        <a href="#services">加值</a>
         <a href="#case">作品</a>
         <a href="#contact">合作</a>
       </div>
     </div>
-    <div class="footer-copy">© 2026 晴域 Sereo · 你的店值得被更多人找到</div>
+    <div class="footer-copy">© 2026 晴域 Sereo · 讓好店被找到</div>
   </div>
 </footer>
 
